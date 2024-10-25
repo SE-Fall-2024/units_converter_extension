@@ -32,9 +32,10 @@ jobs:
       # Run tests
       - name: Run tests
         run: npm test test/*
-
+        
       # Upload coverage report to Coveralls
       - name: Upload coverage to Coveralls
         run: nyc report --reporter=text-lcov | coveralls
         env:
-          COVERALLS_REPO_TOKEN: ${{ XOnPMmZ7FlY8h8HiUGC3GfSI80stuqr05 }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
