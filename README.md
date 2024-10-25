@@ -1,6 +1,8 @@
-# Smart Units Converter - Browser Extension
+<div align="center">
 
-An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
+# Smart Units Converter - Browser Extension
+  
+An extension that converts your selected values into popular units. Save time, make life easier :dancer:
 
 [![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![GitHub issues](https://img.shields.io/github/issues/ncsuswe24/units_converter_extension)
@@ -8,12 +10,14 @@ An extension that converts your selected values into popular units. Saves time, 
 [![GitHub contributors](https://img.shields.io/github/contributors/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/graphs/contributors)
 [![GitHub Actions Build Status](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml/badge.svg)](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ncsuswe24/units_converter_extension/badge.svg?branch=master)](https://coveralls.io/github/ncsuswe24/units_converter_extension?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
+[![Code Style: ESLint](https://img.shields.io/badge/ESLint-purple.svg)](https://eslint.org/)
+[![Code Formatting: Prettier](https://img.shields.io/badge/Prettier-yellow.svg)](https://prettier.io/)  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
 
-**Click on the image below to view the video**
+**Video demo below:**
 
 [![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1nCN8phch_celSRCWX2G5RxKqbnxRehx-/view?usp=drive_link)
+</div>
 
 ## Use Cases
 
