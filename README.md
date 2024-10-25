@@ -2,10 +2,10 @@
 
 An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
 
-![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
+[![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![GitHub issues](https://img.shields.io/github/issues/ncsuswe24/units_converter_extension)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/ncsuswe24/units_converter_extension)
-![GitHub contributors](https://img.shields.io/github/contributors/ncsuswe24/units_converter_extension)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/graphs/contributors)
 [![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
 ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
