@@ -29,6 +29,14 @@ jobs:
       - name: Install Mocha and Chai
         run: npm install --save-dev mocha chai nyc coveralls
 
+      # Do some linting
+      - name: Run style/syntax checking
+        run: npm run lint
+
+      # Make it prettier
+      - name: Run code formatting
+        run: npm run format
+        
       # Run tests
       - name: Run tests
         run: npm test test/*
@@ -38,4 +46,6 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
+
 
