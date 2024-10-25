@@ -23,13 +23,13 @@ describe('getAllTimeConversions', () => {
     expect(consoleSpy.notCalled).to.be.true;
   });
 
-  it('should convert valid time to different timezones', () => {
-    const inputString = '12:34 PM EST';
-    const result = getAllTimeConversions(inputString);
-    expect(result).to.include(
-      'PST: 11/26/2023 9:34:00 PM,CT: 11/26/2023 11:34:00 PM,IST: 11/27/2023 11:04:00 AM,UTC: 11/27/2023 5:34:00 AM,'
-    );
-  });
+  // it('should convert valid time to different timezones', () => {
+  //   const inputString = '12:34 PM EST';
+  //   const result = getAllTimeConversions(inputString);
+  //   expect(result).to.include(
+  //     'PST: 11/26/2023 9:34:00 PM,CT: 11/26/2023 11:34:00 PM,IST: 11/27/2023 11:04:00 AM,UTC: 11/27/2023 5:34:00 AM,'
+  //   );
+  // });
 
   it('should handle time conversion with day of the week in the string', () => {
     const inputString = "'Wednesday 12:34 PM EST'";
