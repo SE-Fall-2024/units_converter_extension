@@ -49,8 +49,10 @@ $(function() {
         deleteCustomUnitVal(e)
     })
     
-    
-    
+    $("#toggle_theme").on("change",function(){
+        console.log("switch theme...");
+        document.body.classList.toggle("dark-theme", this.checked);
+    });
 
     typeSelector.on('change', function (e) {
         populateUnit(e);
