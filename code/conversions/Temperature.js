@@ -32,21 +32,21 @@ class Temperature {
    */
 
   getPrecision(number) {
-    let parts = number.toString().split(".");
+    const parts = number.toString().split('.');
     if (parts.length <= 1) {
       return number < 0 ? parts[0].length - 1 : parts[0].length;
-  }
-    let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
+    }
+    const intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
     return intlen + parts[1].length;
   }
   getStandardConversion(quantity) {
     //We use a switch case to make appropriate conversion
     switch (this.unit.toLowerCase()) {
-      case "celcius":
+      case 'celcius':
         return quantity;
-      case "kelvin":
+      case 'kelvin':
         return quantity - 273.15;
-      case "fahrenheit":
+      case 'fahrenheit':
         return ((quantity - 32) / 9) * 5;
       default:
         return null;
@@ -61,20 +61,20 @@ class Temperature {
    */
   /**/
   getAllConversions(quantity, precision) {
-    let res = "";
+    let res = '';
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
-        case "celcius":
-          res += "," + this.getPreciseNumber(quantity, precision) + " °C";
+        case 'celcius':
+          res += ',' + this.getPreciseNumber(quantity, precision) + ' °C';
           break;
-        case "kelvin": {
-          let conv = quantity + 273.15;
-          res += "," + this.getPreciseNumber(conv, precision) + " °K";
+        case 'kelvin': {
+          const conv = quantity + 273.15;
+          res += ',' + this.getPreciseNumber(conv, precision) + ' °K';
           break;
         }
-        case "fahrenheit": {
-          let conv = (quantity / 5) * 9 + 32;
-          res += "," + this.getPreciseNumber(conv, precision) + " °F";
+        case 'fahrenheit': {
+          const conv = (quantity / 5) * 9 + 32;
+          res += ',' + this.getPreciseNumber(conv, precision) + ' °F';
           break;
         }
       }
@@ -82,9 +82,8 @@ class Temperature {
 
     return res;
   }
-
 }
 
-if (typeof module == "object") {
+if (typeof module == 'object') {
   module.exports = Temperature;
 }
