@@ -27,7 +27,7 @@ jobs:
 
       # Install mocha and chai as dev dependencies
       - name: Install Mocha and Chai
-        run: npm install --save-dev mocha chai
+        run: npm install --save-dev mocha chai nyc coveralls
 
       # Run tests
       - name: Run tests
