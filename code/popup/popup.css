@@ -57,6 +57,7 @@ body.light-theme .unit_container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    border-radius: 8px; /* Slightly rounded corners */
     margin-top: 20px;
     gap: 1rem;
 }
@@ -151,7 +152,7 @@ body.dark-theme {
 body.dark-theme .selector {
     background-color: #2E073F; /* dark background */
     background-image: linear-gradient(top, #2E073F, #AD49E1); /* Gradient for modern look */
-    border: 1px solid #EBD3F8; /* Lighter border color */
+    border: 1px solid #AD49E1; /* Lighter border color */
     color: #EBD3F8; /* Lighter text color for better readability */
     font-size: 14px;
     line-height: 24px;
@@ -199,6 +200,7 @@ body.dark-theme .unit_container {
     justify-content: space-between;
     margin-top: 20px;
     gap: 1rem;
+    border-radius: 8px; /* Slightly rounded corners */
 }
 
 body.dark-theme .unit {
@@ -208,13 +210,17 @@ body.dark-theme .unit {
 
 body.dark-theme .unit input {
     background-color: #450b5e;
-    color: #EBD3F8;
+    color: #AD49E1;
     font-size: 24px;
     text-align: center;
     border: none;
     outline: none;
     width: 100%;
     padding: 12px 0;
+}
+
+body.dark-theme .unit input::placeholder {
+    color: #AD49E1; /* Replace with your desired color */
 }
 
 body.dark-theme .unit select {
@@ -224,6 +230,7 @@ body.dark-theme .unit select {
     display: block;
     text-align: center;
     padding: 8px;
+    border-radius: 8px; /* Slightly rounded corners */
 }
 
 body.dark-theme .type_container select {
@@ -231,6 +238,7 @@ body.dark-theme .type_container select {
     font-size: 20px;
     text-align: center;
     padding: 8px;
+    border-radius: 8px; /* Slightly rounded corners */
 }
 
 body.dark-theme .Tab {
@@ -266,15 +274,15 @@ body.dark-theme .viewAllButton {
     margin-top: 15px; /* Increased top margin */
     border-radius: 20px; /* Rounded button corners */
     padding: 10px 20px; /* Increased padding */
-    background-color: #2E073F; /* New button color */
+    background-color: #7A1CAC; /* New button color */
+    border: none;
     color: #EBD3F8; /* Button text color */
     font-size: 16px; /* Font size */
-    border: none; /* Removed border */
     cursor: pointer; /* Cursor on hover */
 }
 
 body.dark-theme .viewAllButton:hover {
-    background-color: #7A1CAC;
+    background-color: #AD49E1;
 }
 
 
