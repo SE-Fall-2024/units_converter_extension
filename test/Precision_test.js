@@ -38,5 +38,30 @@ describe('Precision Value', function() {
     assert.strictEqual(getPrecisionV(-0.001), 3); // leading zeros in decimal part
     assert.strictEqual(getPrecisionV(100.000), 3); // trailing zeros after a whole number
   });
+  
+  // TESTING " GET PRECISE NUMBER VALUE "
+
+  it("should always round to 3 decimal points for any positive number", function () {
+    assert.strictEqual(getPreciseNumberV(123.456789, 2), 123.457); // rounds to 2 decimal places
+    assert.strictEqual(getPreciseNumberV(123.456789, 11), 123.457); // rounds to 4 decimal places
+    assert.strictEqual(getPreciseNumberV(0, 6), 0);
+  });
+
+  it("should return the number rounded to the specified precision for a negative number", function () {
+    assert.strictEqual(getPreciseNumberV(-123.456789, 11), '-123.4567890'); // chooses 10 !
+    assert.strictEqual(getPreciseNumberV(-123.456788, 1), '-123.456788'); // chooses precisionV
+    assert.strictEqual(getPreciseNumberV(-123.45678, 9), '-123.456780');  //chooses precision
+  });
+
+  it("should handle precision greater than the number’s significant digits", function () {
+    assert.strictEqual(getPreciseNumberV(12.34, 5), 12.340); // adds trailing zeros
+    assert.strictEqual(getPreciseNumberV(-12.34, 5), '-12.340'); // adds trailing zeros for negative
+  });
+
+  it("should round correctly to 3 decimal places when precision not specified", function () {
+    assert.strictEqual(getPreciseNumberV(123.4567), 123.457); // default to 3 decimals, rounding up
+    assert.strictEqual(getPreciseNumberV(123.4), 123.4); // default to 3 decimals, no change needed
+    assert.strictEqual(getPreciseNumberV(0.34567), 0.346); // default to 3 decimals, no change needed
+  });
 
 });

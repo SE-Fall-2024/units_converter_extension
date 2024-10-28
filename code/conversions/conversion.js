@@ -14,6 +14,15 @@ const getPrecisionV = (number) => {
 
 }
 
+/**
+ * Returns a rounded version of the given number, 
+ * rounded precisely to the number of decimal points needed
+ * The precision needed is the max value between the given precision 
+ *  and current precision of the number. 
+ * @param {Number} number 
+ * @param {Number} precision 
+ * @returns The rounded number value
+ */
 const getPreciseNumberV = (number, precision) => {
   if (number < 0) {
     return number.toPrecision(
@@ -30,6 +39,7 @@ const getPreciseNumberV = (number, precision) => {
 const getStandardConversion = (unitObject, quantity) => {
   return quantity/unitObject.ratio;
 }
+
 /**
  * From our standard conversion we try to convert into all the other units specified in arr property of this class with a precision no more than 10
  * @param {Number} quantity input quantity number
@@ -54,5 +64,6 @@ const getAllConversions = async (quantity, precision, unitObject, listOfUnits) =
 module.exports = {
   getStandardConversion,
   getAllConversions,
-  getPrecisionV
+  getPrecisionV,
+  getPreciseNumberV
 };
