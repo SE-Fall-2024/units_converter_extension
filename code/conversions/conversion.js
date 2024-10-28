@@ -3,9 +3,14 @@
 //  * @returns returns value with accuracy of input number decimal points
 //  */
 const getPrecisionV = (number) => {
+  number = number < 0 ? -1 * number : number;
+
   let parts = number.toString().split(".");
-  let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
-  return intlen + parts[1].length;
+  if (parts.length > 1) {
+    let intPart = parts[0].replace(/^0+/, '');
+    return intPart.length + parts[1].toString().length;
+  }
+  return parts[0].length
 
 }
 
@@ -48,5 +53,6 @@ const getAllConversions = async (quantity, precision, unitObject, listOfUnits) =
 // exports = {getStandardConversion,getAllConversions,getPrecisionV,getPreciseNumberV};
 module.exports = {
   getStandardConversion,
-  getAllConversions
+  getAllConversions,
+  getPrecisionV
 };
