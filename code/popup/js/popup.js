@@ -12,12 +12,12 @@ unit["celcius"] = "°C"
 unit["fahrenheit"] = "°F"
 unit["kelvin"] = "°K"
 
-
 $(function() {
     // type Selector Populate
     let typeSelector = $("#type_selector");
     let favouriteTypeSelector = $("#favourite_type_selector");
     let customTypeSelector = $("#custom_type_selector");
+    let historyTypeSelector = $("#history_type_selector");
     let typeSelectorOptionsArray = Object.keys(POPULAR_UNITS)
     
     typeSelectorOptionsArray.forEach(function (type) {
@@ -39,6 +39,14 @@ $(function() {
             }));
         }
         
+        if(type == "currency"){
+            POPULAR_UNITS["currency"].forEach(function(currency) {
+                historyTypeSelector.append($('<option>', {
+                    value: currency,
+                    text: currency.charAt(0).toUpperCase() + currency.slice(1) // Capitalize the first letter
+                }));
+            });
+        }
     });
 
     $("#custom_unit_add").on("click",function(e){
@@ -49,8 +57,10 @@ $(function() {
         deleteCustomUnitVal(e)
     })
     
-    
-    
+    $("#toggle_theme").on("change",function(){
+        console.log("switch theme...");
+        document.body.classList.toggle("dark-theme", this.checked);
+    });
 
     typeSelector.on('change', function (e) {
         populateUnit(e);
@@ -58,6 +68,37 @@ $(function() {
 
     customTypeSelector.on('change', function (e) {
         populateCustomUnit(e);
+    });
+
+    historyTypeSelector.on('change', function(e) {
+        const selectedCurrency = $(this).val();
+        console.log(selectedCurrency)
+
+        const graphUrl = `./js/poop.png`; // Change this to the actual URL for your graphs
+        $('#currency_graph').attr('src', graphUrl).show();
+
+        // const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+        // const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+
+        // new Chart(document.getElementById('myChart'), {
+        //     type: "line",
+        //     data: {
+        //         labels: xValues,
+        //         datasets: [{
+        //             label: "Historical Exchange Rates",
+        //             data: yValues,
+        //             fill: false
+        //         }]
+        //     },
+        //     options: {
+        //         responsive: true,
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: false
+        //             }
+        //         }
+        //     }
+        // });
     });
 
     let unitSelectorLeftVal = $("#left_input")
@@ -97,9 +138,9 @@ const addCustomUnitVal = () => {
 
     addCustomUnit({
         unit: customUnitName,
-		type: customTypeSelector,
-		aliases: [customUnitName],
-		ratio: customUnitRatio,
+        type: customTypeSelector,
+        aliases: [customUnitName],
+        ratio: customUnitRatio,
     }).then(()=>{
         populateCustomUnit()
     })
