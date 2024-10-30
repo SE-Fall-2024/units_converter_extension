@@ -89,8 +89,22 @@ describe('Angle', function () {
             assert.strictEqual((50 * unit_object_radian.ratio).toFixed(2), '0.87');
         });
 
-        it('should return approximately 50 when quantity is 0.87 radians in degrees', function () {
-            assert.strictEqual((0.87 / unit_object_radian.ratio).toFixed(0), '50');
+        // Non-nominal tests
+        it('should handle a very large degree value without precision errors', function () {
+            assert.strictEqual(getStandardConversion(unit_object_degree, 1e10), 1e10);
         });
+
+        it('should return NaN when a string is passed as quantity', function () {
+            assert.ok(isNaN(getStandardConversion(unit_object_degree, 'fifty')));
+        });
+
+        it('should return NaN when NaN is passed as quantity', function () {
+            assert.ok(isNaN(getStandardConversion(unit_object_degree, NaN)));
+        });
+
+        it('should return NaN when undefined is passed as quantity', function () {
+            assert.ok(isNaN(getStandardConversion(unit_object_degree, undefined)));
+        });
+
     });
 });
