@@ -278,19 +278,19 @@ const UNITS = [
 		unit: "b/s",
 		type: "dataTransfer",
 		aliases: ["b/s", "bps"],
-		ratio: 1000000000000,
+		ratio: 1,
 	},
 	{
 		unit: "Kb/s",
 		type: "dataTransfer",
 		aliases: ["Kb/s", "Kbps"],
-		ratio: 1000000000,
+		ratio: 0.001,
 	},
 	{
 		unit: "Mb/s",
 		type: "dataTransfer",
 		aliases: ["Mb/s", "Mbps"],
-		ratio: 1000000,
+		ratio: 0.000001,
 	},
 	{
 		unit: "Gb/s",
@@ -417,7 +417,7 @@ const UNITS = [
 		type: "volume",
 		aliases: [
 			"fluid ounce",
-			" fluid ounces",
+			"fluid ounces",
 			"FlOz",
 			"US fluid ounce",
 			"US fl oz",
