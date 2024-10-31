@@ -17,6 +17,8 @@ An extension that converts your selected values into popular units. Save time, m
 **Video demo below:**
 
 [![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1nCN8phch_celSRCWX2G5RxKqbnxRehx-/view?usp=drive_link)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![CSS](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 </div>
 
 ## Use Cases
@@ -32,55 +34,47 @@ An extension that converts your selected values into popular units. Save time, m
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
 - Convert Time from a given time zone to another (PST to EST)
-
-  ## Technologies we used:
- - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
- - ![HTML](https://img.shields.io/badge/just%20the%20message-8A2BE2)
- - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
- - ![CSS](https://img.shields.io/badge/CSS-7B2EQ2)
+- If you are a scientist: convert easily between units of scientific measurement like radians, joules, hertz, and more!
 
 ## Installation Guide
 
 For detailed installation instructions, please refer to the [INSTALL.md](./INSTALL.md) file.
 
-## Popup Features for the user
-To access the popup feature the user has to click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection"
+## Our features:
+Once the user has installed our extension, all they have to do is click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection":
 
 ### 1. Direct conversions
-- This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
-- The user selects the conversion he requires from the given standard conversions
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
-
-- The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
+- This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user!
+- The user selects the conversion they require from the given standard conversions and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick.
+  
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9" height="300" style="vertical-align: top;"/>
+</p>
 
 ### 2. Customized Conversions
 
-- This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
-- This is the example taken where 1 meter is taken as 3 subs
+- This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people. Here, the user added a custom unit 1 meter = 3 subs, and it is visible in the popup:
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
-
-- Testing whether the customized conversion works or not
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8" height="300" style="vertical-align: top;"/>
+</p>
   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
+- These custom units can be deleted as well:
 
-- Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added that allows user to delete his customized conversion.
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae" width="400" style="vertical-align: top;"/>
+</p>
    
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
-
 ### 3. Favorites 
 - This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
-- Here we select pint and gallon as favorites in volume converions. 
-   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+- Here we select pint and gallon as favorites in volume converions so now all the volume conversions will have pint and gallon at the top of the display!
 
-- So now all the volume conversions will have pint and gallon at the top of the display
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
-
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c" height="300" style="vertical-align: top;"/>
+</p>
 
 ## Style Checker and Analyzer
 
@@ -107,7 +101,6 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
 
 
 ## Run Test cases and coverage
-
 
  ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/tree/master/docs/test_doc)
 
