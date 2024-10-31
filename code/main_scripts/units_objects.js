@@ -525,13 +525,13 @@ const UNITS = [
 		unit: "gradian",
 		type: "angle",
 		aliases: ["gradian", "grad", "gon"],
-		ratio: 200/180,
+		ratio: 1.111111111111111,
 	},
 	{
 		unit: "milliradian",
 		type: "angle",
 		aliases: ["milliradian", "mrad"],
-		ratio: 17.4533,
+		ratio: 17.453292519943295,  
 	},
 	{
 		unit: "minute of arc",
@@ -543,6 +543,6 @@ const UNITS = [
 		unit: "radian",
 		type: "angle",
 		aliases: ["radian", "rad"],
-		ratio: 0.01745329251,
+		ratio: 0.0174533,  
 	},
 ];
