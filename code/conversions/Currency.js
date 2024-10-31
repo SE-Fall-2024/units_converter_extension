@@ -109,6 +109,45 @@ class Currency {
         return null;
     }
   }
+  /**
+   * Fetches a historical currency conversion rate for a specified date, base currency, target currency, and amount.
+   * Utilizes exchangerate.host API to retrieve historical conversion data.
+   * 
+   * @async
+   * @param {String} baseCurrency - The currency code to convert from (e.g., "USD").
+   * @param {String} targetCurrency - The currency code to convert to (e.g., "EUR").
+   * @param {String} date - The date for historical conversion in 'YYYY-MM-DD' format.
+   * @param {Number} amount - The amount to be converted.
+   * @returns {Number|null} - The converted amount or null if the API call fails.
+   */
+  async getHistoricalData(baseCurrency, targetCurrency, date, amount = 1) {
+    // Validate date format YYYY-MM-DD // New implemented
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(date)) {
+        console.warn("Invalid date format");
+        return null;
+    }
+
+    const url = `https://api.exchangerate.host/convert?access_key=...&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.success) {
+            return data.result;
+        } else {
+            console.warn(`Failed to fetch historical data: ${data.error || 'Unknown error'}`);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error fetching historical data:", error);
+        return null;
+    }
+}
+
+
+
+
+
 
   /**
    * From our standard conversion we try to convert into all the other units specified in arr property of this class with a precision no more than 10
@@ -180,4 +219,8 @@ class Currency {
 
 if (typeof module == 'object') {
   module.exports = Currency;
+} else {
+  window.Currency = Currency; // Make available globally in popup context
 }
+
+

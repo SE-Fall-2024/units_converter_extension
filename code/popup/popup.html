@@ -1,112 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link href="./popup.css" rel="stylesheet" type="text/css" />
-  <meta charset="UTF-8">
-  <script type="text/javascript" src="../main_scripts/units_objects.js"></script>
-  <script type="text/javascript" src="../main_scripts/utility.js"></script>
-	<script type="text/javascript" src="../main_scripts/custom_units.js"></script>
-	<script type="text/javascript" src="../conversions/conversion.js"></script>
-	<script type="text/javascript" src="../conversions/Temperature.js"></script>
-	<script type="text/javascript" src="../conversions/Currency.js"></script>
-  <script type="text/javascript" src="../main_scripts/popular_units.js"></script>
-  <script type="text/javascript" src="../main_scripts/parser_script.js"></script>
-  <script type="text/javascript" src="./js/jquery/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="./js/popup.js"></script>
+ <html lang="en">
+  <head>
+    <link href="./popup.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <script
+      type="text/javascript"
+      src="../main_scripts/units_objects.js"
+    ></script>
+    <script type="text/javascript" src="../main_scripts/utility.js"></script>
+    <script
+      type="text/javascript"
+      src="../main_scripts/custom_units.js"
+    ></script>
+    <script type="text/javascript" src="../conversions/conversion.js"></script>
+    <script type="text/javascript" src="../conversions/Temperature.js"></script>
+    <script type="text/javascript" src="../conversions/Currency.js"></script>
+    <script
+      type="text/javascript"
+      src="../main_scripts/popular_units.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../main_scripts/parser_script.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./js/jquery/jquery-3.7.1.min.js"
+    ></script>
+    <script type="text/javascript" src="./js/popup.js"></script>
 
-  <title>Convertor - popup</title>
-</head>
+    <title>Convertor - popup</title>
+  </head>
 
-<body class="light-theme"> <!-- Default theme is light -->
+  <body class="light-theme">
+    <!-- Default theme is light -->
 
-  <div class="Tab">
-    <button class="tablinks selected"><span>Convertor</span></button>
-    <button class="tablinks"><span>Custom</span></button>
-    <button class="tablinks"><span>Favourite</span></button>
-  </div>
-
-  <div class="main_container">
-    <div class="Convertor tab_container">
-      <h1 style="text-align: center;">Convertor</h1>
-      <div class="input_container">
-        <div class="type_container">
-          <select id="type_selector" class="selector"></select>
-        </div>
-        <div class="unit_container">
-          <div class="unit">
-            <input type="number" id="left_input" name="right_input" value="0"/>
-            <select id="unit_selector_left" class="selector" name="left_unit">
-              <option>Please Select Type</option>
-            </select>
-          </div>
-          <div style="font-size: 30px;">=</div>
-          <div class="unit">
-            <input type="number" id="right_input" name="left_input" value="0"/>
-            <select id="unit_selector_right" class="selector" name="right_unit">
-              <option>Please Select Type</option>
-            </select>
-          </div>
-        </div>
-      </div>
+    <div class="Tab">
+      <button class="tablinks selected"><span>Convertor</span></button>
+      <button class="tablinks"><span>Custom</span></button>
+      <button class="tablinks"><span>Favourite</span></button>
+      <button class="tablinks"><span>History</span></button>
     </div>
 
-    <div class="Custom tab_container" style="display: none;">
-      <h1 style="text-align: center;">Custom</h1>
-      <div class="type_container">
-        <select id="custom_type_selector" class="selector"></select>
-      </div>
-      <div>
-        <div class="unit_container">
-          <div style="font-size: 24px; text-align: center; border: none; outline: none; width: 100%; padding: 12px 0;">
-            <div><span>1</span>
-              <div id="custom_unit_base"></div>
+    <div class="main_container">
+      <div class="Convertor tab_container">
+        <h1 style="text-align: center">Convertor</h1>
+        <div class="input_container">
+          <div class="type_container">
+            <select id="type_selector" class="selector"></select>
+          </div>
+          <div class="unit_container">
+            <div class="unit">
+              <input
+                type="number"
+                id="left_input"
+                name="right_input"
+                value="0"
+              />
+              <select id="unit_selector_left" class="selector" name="left_unit">
+                <option>Please Select Type</option>
+              </select>
+            </div>
+            <div style="font-size: 30px">=</div>
+            <div class="unit">
+              <input
+                type="number"
+                id="right_input"
+                name="left_input"
+                value="0"
+              />
+              <select
+                id="unit_selector_right"
+                class="selector"
+                name="right_unit"
+              >
+                <option>Please Select Type</option>
+              </select>
             </div>
           </div>
-          <div style="font-size: 30px; margin-top: 10px;">=</div>
-          <div class="unit">
-            <div><input style="font-size: 20px;" type="text" id="custom_unit_value_right" placeholder="Unit value"/></div>
+        </div>
+      </div>
+
+      <div class="Custom tab_container" style="display: none">
+        <h1 style="text-align: center">Custom</h1>
+        <div class="type_container">
+          <select id="custom_type_selector" class="selector"></select>
+        </div>
+        <div>
+          <div class="unit_container">
+            <div
+              style="
+                font-size: 24px;
+                text-align: center;
+                border: none;
+                outline: none;
+                width: 100%;
+                padding: 12px 0;
+              "
+            >
+              <div>
+                <span>1</span>
+                <div id="custom_unit_base"></div>
+              </div>
+            </div>
+            <div style="font-size: 30px; margin-top: 10px">=</div>
+            <div class="unit">
+              <div>
+                <input
+                  style="font-size: 20px"
+                  type="text"
+                  id="custom_unit_value_right"
+                  placeholder="Unit value"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="unit_container" style="justify-content: center">
+            <div class="unit">
+              <input
+                style="font-size: 20px"
+                type="text"
+                id="custom_unit_name_left"
+                placeholder="Unit Name"
+              />
+            </div>
+          </div>
+          <div style="text-align: center">
+            <button id="custom_unit_add" class="viewAllButton">Add</button>
           </div>
         </div>
-        <div class="unit_container" style="justify-content: center;">
-          <div class="unit">
-            <input style="font-size: 20px;" type="text" id="custom_unit_name_left" placeholder="Unit Name"/>
+        <br />
+        <br />
+        <div>
+          <div class="type_container">
+            <select id="delete_type_selector" class="selector"></select>
+          </div>
+          <div style="text-align: center">
+            <button id="custom_unit_delete" class="viewAllButton">
+              Delete
+            </button>
           </div>
         </div>
-        <div style="text-align: center;">
-          <button id="custom_unit_add" class="viewAllButton">Add</button>
-        </div>
       </div>
-      <br/>
-      <br/>
-      <div>
-        <div class="type_container">
-          <select id="delete_type_selector" class="selector"></select>
-        </div>
-        <div style="text-align: center;">
-          <button id="custom_unit_delete" class="viewAllButton">Delete</button>
-        </div>
-      </div>
-    </div>
 
-    <div class="Favourite tab_container" style="display: none;">
-      <h1 style="text-align: center;">Favourite</h1>
-      <div class="input_container">
-        <div class="type_container">
-          <select id="favourite_type_selector" class="selector"></select>
-        </div>
-        <div class="units">
-          <ul id="units_container"></ul>
+      <div class="Favourite tab_container" style="display: none">
+        <h1 style="text-align: center">Favourite</h1>
+        <div class="input_container">
+          <div class="type_container">
+            <select id="favourite_type_selector" class="selector"></select>
+          </div>
+          <div class="units">
+            <ul id="units_container"></ul>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Theme Switcher Button -->
-    <div class="theme-switch-container">
-      <label class="switch">
-        <input type="checkbox" id="toggle_theme">
-        <span class="slider round"></span>
-      </label>    
-    </div>
 
-  </div>
-</body>
+      <div class="History tab_container" style="display: none">
+        <h1 style="text-align: center">History</h1>
+         
+        <div class="history-container">
+          <label for="historical_date">Select Date:</label>
+          <input type="date" id="historical_date">
+          
+          <label for="base_currency">Base Currency:</label>
+          <select id="base_currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+              <!-- Add other options as needed -->
+          </select>
+          
+          <label for="target_currency">Target Currency:</label>
+          <select id="target_currency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+              <!-- Add other options as needed -->
+          </select>
+          
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" value="1">
+
+          <div  style="text-align: center;align-self: center;"  > 
+            <button id="compare_button" class = "viewAllButton">
+              Convert Using Historical Rate
+            </button>
+          </div>
+
+          <div id="result"></div>
+      </div>
+      
+    
+    </div>
+      <!-- Theme Switcher Button -->
+      <div class="theme-switch-container">
+        <label class="switch">
+          <input type="checkbox" id="toggle_theme" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+  </body>
 </html>
