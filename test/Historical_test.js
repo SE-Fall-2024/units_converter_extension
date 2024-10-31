@@ -220,4 +220,51 @@ describe("Currency.getHistoricalData", function () {
         const result = await currency.getHistoricalData("USD", "EUR", "2023-01-01", 1);
         expect(result).to.be.null;
     });
+
+    // Testing diabolical input values
+
+    it("should return null for incorrect API inputs", async function () {
+        fetchStub.resolves({
+            json: () => Promise.resolve({ success: false, error: "API limit reached" }),
+        });
+
+        const result = await currency.getHistoricalData("not", "real", "2023-01-01", 1);
+        expect(result).to.be.null;
+    });
+
+    it("should return null for requests from future dates", async function () {
+        fetchStub.resolves({
+            json: () => Promise.resolve({ success: false, error: "API limit reached" }),
+        });
+
+        const result = await currency.getHistoricalData("USD", "EUR", "3000-01-01", 1);
+        expect(result).to.be.null;
+    });
+
+    it("should return null for requests from nonexistent dates", async function () {
+        fetchStub.resolves({
+            json: () => Promise.resolve({ success: false, error: "API limit reached" }),
+        });
+
+        const result = await currency.getHistoricalData("USD", "EUR", "2023-02-31", 1);
+        expect(result).to.be.null;
+    });
+
+    it("should return null for requests with same base currencies", async function () {
+        fetchStub.resolves({
+            json: () => Promise.resolve({ success: false, error: "API limit reached" }),
+        });
+
+        const result = await currency.getHistoricalData("USD", "USD", "2023-01-01", 1);
+        expect(result).to.be.null;
+    });
+
+    it("should return null for requests with invalid string amounts", async function () {
+        fetchStub.resolves({
+            json: () => Promise.resolve({ success: false, error: "API limit reached" }),
+        });
+
+        const result = await currency.getHistoricalData("USD", "USD", "2023-01-01", "1");
+        expect(result).to.be.null;
+    });
 });
