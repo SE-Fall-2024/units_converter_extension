@@ -1,19 +1,23 @@
+<div align="center">
+
 # Smart Units Converter - Browser Extension
+  
+An extension that converts your selected values into popular units. Save time, make life easier :dancer:
 
-An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
-
-![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
-![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
-[![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
-![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
+[![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![GitHub issues](https://img.shields.io/github/issues/ncsuswe24/units_converter_extension)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/graphs/contributors)
+[![GitHub Actions Build Status](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml/badge.svg)](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ncsuswe24/units_converter_extension/badge.svg?branch=master)](https://coveralls.io/github/ncsuswe24/units_converter_extension?branch=master)
+[![Code Style: ESLint](https://img.shields.io/badge/ESLint-purple.svg)](https://eslint.org/)
+[![Code Formatting: Prettier](https://img.shields.io/badge/Prettier-yellow.svg)](https://prettier.io/)  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
 
-**Click on the image below to view the video**
+**Video demo below:**
 
 [![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1nCN8phch_celSRCWX2G5RxKqbnxRehx-/view?usp=drive_link)
+</div>
 
 ## Use Cases
 
@@ -37,44 +41,7 @@ An extension that converts your selected values into popular units. Saves time, 
 
 ## Installation Guide
 
-### Step 1: Clone [this](https://github.com/shyamal31/units_converter_extension) Repository
-
-```
-git clone [repository_url]
-
-```
-### Step 2: Go to chrome extensions
-  
-- In the chrome browser open
-  
-  ```
-  chrome://extensions/
-  ```
-### Step 3: Enable developer settings
-- Enable developer settings if it is not enabled
-
-  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1dc7c2ee-cbaa-4308-a3dd-937062d035e8)
-
-### Step 4: Unpack the cloned repository
-- Choose Load Unpacked
-- Select the repository folder that was cloned in the first step
-
-  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/6b1264db-9a24-4846-8c19-e1e925582e1c)
-
-### Step 5: Check the extension added
-- The extension will now be added to the Chrome
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/d8364664-7236-42ee-aa27-ada0c4ce3fcf)
-
-### Step 6: Test the extension
-- Displays the most relevant converted unit first
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
-
-
-- Click on view all button to view all of the converted units for that metric
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
+For detailed installation instructions, please refer to the [INSTALL.md](./INSTALL.md) file.
 
 ## Popup Features for the user
 To access the popup feature the user has to click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection"
