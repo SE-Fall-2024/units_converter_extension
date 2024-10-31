@@ -432,6 +432,54 @@ const getConversion = async (change) => {
     }else{
         $("#left_input").val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorLeftVal)>-1)].split(" ")[typeSelector=="currency"?1:0])
     }
-
-    console.log(result);
-}
+   
+    const currencyInstance = new Currency();
+    $(function() {
+        // Currency symbols
+        const unit = {
+            'usd': "$", 'eur': "€", 'gbp': "£", 'inr': "₹", 'yen': "¥",
+            'cad': "C$", 'aud': "AU$", 'chf': "Fr", 'cny': "¥",
+            'celcius': "°C", 'fahrenheit': "°F", 'kelvin': "°K"
+        };
+        
+        const currencies = ["USD", "EUR", "GBP", "INR", "JPY", "CAD", "AUD", "CHF", "CNY"];
+        
+        // Populate target currency based on base currency selection
+        $('#base_currency').on('change', function() {
+            const baseCurrency = $(this).val();
+            const targetCurrencyDropdown = $('#target_currency');
+        
+            // Clear current options in target currency dropdown
+            targetCurrencyDropdown.empty();
+        
+            // Repopulate target currency dropdown, excluding base currency
+            currencies.forEach(currency => {
+                if (currency !== baseCurrency) {
+                    targetCurrencyDropdown.append(new Option(currency, currency));
+                }
+            });
+        });
+        $('#base_currency').trigger('change');
+        // Event listener for the convert button
+        $("#compare_button").on("click", async function() {
+            const date = $("#historical_date").val();
+            const baseCurrency = $("#base_currency").val();
+            const targetCurrency = $("#target_currency").val();
+            const amount = $("#amount").val();
+            
+            if (date && baseCurrency && targetCurrency && amount) {
+                const currencyInstance = new Currency();
+                const rate = await currencyInstance.getHistoricalData(baseCurrency, targetCurrency, date, amount);
+                const resultDiv = $("#result");
+                
+                if (rate) {
+                    resultDiv.text(`On ${date}, ${amount} ${baseCurrency} = ${rate} ${targetCurrency}`);
+                } else {
+                    resultDiv.text("Error fetching historical rate.");
+                }
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    });
+}    
