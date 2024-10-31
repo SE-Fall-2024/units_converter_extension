@@ -81,7 +81,10 @@ Once the user has installed our extension, all they have to do is click on the e
 ### 3. Switch Themes
 - The unit converter has a light and dark theme, which can be switched between using the simple toggle switch !
 
-
+<p align="center">
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/light-theme.png" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/dark-theme.png" height="300" style="vertical-align: top;"/>
+</p>
 
 ### 4. Convert Scientific Units
 
