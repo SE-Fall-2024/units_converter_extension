@@ -76,6 +76,16 @@ Once the user has installed our extension, all they have to do is click on the e
   <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c" height="300" style="vertical-align: top;"/>
 </p>
 
+### 4. View Historical Exchange Rates
+
+### 3. Switch Themes
+- The unit converter has a light and dark theme, which can be switched between using the simple toggle switch !
+
+
+
+### 4. Convert Scientific Units
+
+
 ## Style Checker and Analyzer
 
 ### Standard Js
