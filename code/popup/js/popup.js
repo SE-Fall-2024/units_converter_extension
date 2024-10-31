@@ -60,6 +60,12 @@ $(function () {
   customTypeSelector.on('change', function (e) {
     populateCustomUnit(e);
   });
+  
+
+  $("#toggle_theme").on("change",function(){
+      console.log("switch theme...");
+      document.body.classList.toggle("dark-theme", this.checked);
+  });
 
   const unitSelectorLeftVal = $('#left_input');
   const unitSelectorRightVal = $('#right_input');

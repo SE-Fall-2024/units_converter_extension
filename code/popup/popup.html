@@ -14,21 +14,11 @@
   <script type="text/javascript" src="./js/jquery/jquery-3.7.1.min.js"></script>
   <script type="text/javascript" src="./js/popup.js"></script>
 
-  <!-- Adding the Theme Switcher Script -->
-  <script>
-    function switchTheme() {
-      const body = document.body;
-      body.classList.toggle('dark-theme');
-    }
-  </script>
-
   <title>Convertor - popup</title>
 </head>
+
 <body class="light-theme"> <!-- Default theme is light -->
-  
-  <!-- Theme Switcher Button -->
-  <button onclick="switchTheme()" id="theme-switcher" style="position: absolute; top: 10px; right: 10px;">Switch Theme</button>
-  
+
   <div class="Tab">
     <button class="tablinks selected"><span>Convertor</span></button>
     <button class="tablinks"><span>Custom</span></button>
@@ -87,7 +77,6 @@
         </div>
       </div>
       <br/>
-      <hr/>
       <br/>
       <div>
         <div class="type_container">
@@ -110,6 +99,14 @@
         </div>
       </div>
     </div>
+    <!-- Theme Switcher Button -->
+    <div class="theme-switch-container">
+      <label class="switch">
+        <input type="checkbox" id="toggle_theme">
+        <span class="slider round"></span>
+      </label>    
+    </div>
+
   </div>
 </body>
 </html>
