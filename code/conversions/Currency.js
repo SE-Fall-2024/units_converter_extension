@@ -121,20 +121,30 @@ class Currency {
    * @returns {Number|null} - The converted amount or null if the API call fails.
    */
   async getHistoricalData(baseCurrency, targetCurrency, date, amount = 1) {
-    const url = `https://api.exchangerate.host/convert?access_key=e8faf684c7a1d77d15a8c9bf8b19ee80&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+    // Validate date format YYYY-MM-DD // New implemented
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(date)) {
+        console.warn("Invalid date format");
+        return null;
+    }
+
+    const url = `https://api.exchangerate.host/convert?access_key=...&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
         if (data.success) {
-            return data.result; // This is the converted amount based on historical rate
+            return data.result;
         } else {
-            throw new Error("Failed to fetch historical data.");
+            console.warn(`Failed to fetch historical data: ${data.error || 'Unknown error'}`);
+            return null;
         }
     } catch (error) {
         console.error("Error fetching historical data:", error);
         return null;
     }
 }
+
+
 
 
 
