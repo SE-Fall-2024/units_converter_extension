@@ -3,12 +3,26 @@
 //  * @returns returns value with accuracy of input number decimal points
 //  */
 const getPrecisionV = (number) => {
+  number = number < 0 ? -1 * number : number;
+
   let parts = number.toString().split(".");
-  let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
-  return intlen + parts[1].length;
+  if (parts.length > 1) {
+    let intPart = parts[0].replace(/^0+/, '');
+    return intPart.length + parts[1].toString().length;
+  }
+  return parts[0].length
 
-}
+};
 
+/**
+ * Returns a rounded version of the given number, 
+ * rounded precisely to the number of decimal points needed
+ * The precision needed is the max value between the given precision 
+ *  and current precision of the number. 
+ * @param {Number} number 
+ * @param {Number} precision 
+ * @returns The rounded number value
+ */
 const getPreciseNumberV = (number, precision) => {
   if (number < 0) {
     return number.toPrecision(
@@ -16,15 +30,16 @@ const getPreciseNumberV = (number, precision) => {
     );
   }
   return Math.round(number * 1000) / 1000;
-}
+};
 
 /**
  * @param {Number} quantity input number
  * @returns returns value with accuracy of 10 decimal points
  */
 const getStandardConversion = (unitObject, quantity) => {
-  return quantity/unitObject.ratio;
-}
+  return quantity / unitObject.ratio;
+};
+
 /**
  * From our standard conversion we try to convert into all the other units specified in arr property of this class with a precision no more than 10
  * @param {Number} quantity input quantity number
@@ -32,21 +47,30 @@ const getStandardConversion = (unitObject, quantity) => {
  * @returns all values with accuracy of 10 decimal points
  */
 /**/
-const getAllConversions = async (quantity, precision, unitObject, listOfUnits) => {
-  let res = "";
+const getAllConversions = async (
+  quantity,
+  precision,
+  unitObject,
+  listOfUnits
+) => {
+  let res = '';
   const toUnits = listOfUnits.filter((object) => {
     return object.type === unitObject.type && object.unit !== unitObject.unit;
   });
-  
+
   toUnits.forEach((u) => {
-    res += "," + getPreciseNumberV(quantity*u.ratio, precision) + " " + u.unit;
+    res +=
+      ',' + getPreciseNumberV(quantity * u.ratio, precision) + ' ' + u.unit;
   });
 
   return res;
-}
+};
 
 // exports = {getStandardConversion,getAllConversions,getPrecisionV,getPreciseNumberV};
 module.exports = {
   getStandardConversion,
-  getAllConversions
+  getAllConversions,
+  getPrecisionV,
+  getPreciseNumberV
 };
+
