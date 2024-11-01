@@ -31,3 +31,24 @@ git clone [repository_url]
 - Displays the most relevant converted unit first
   
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
+
+
+## TO ACTIVATE HISTORICAL EXCHANGE RATES:
+
+### Step 1: Retrieve API Key
+1. Go to [exchangerate.host](https://exchangerate.host/)
+2. Sign Up: Create a free account by clicking on Sign Up and filling out the required information.
+3. Generate API Key: After logging in, navigate to the API Keys section in your account dashboard.
+4. Copy the API Key: Generate a new API key and copy it for later use.
+
+### Step 2: Create and Configure Config.js
+1. Locate the Example File: In the root directory of the project, find the file named Config.js.example.
+2. Create Config.js: Make a copy of this file and rename it to Config.js in the same directory.
+3. Insert Your API Key: Replace the placeholder "YOUR_API_KEY_HERE" with the API key you obtained.
+
+Important: Do not commit Config.js to any public repository, as it contains your personal API key.
+
+### Step 3: Refresh the extension
+1. Reload the Extension
+2. Restart Chrome or Reload the Extension: After setting up Config.js, reload the extension in Chrome to apply the changes.
+3. Test Functionality: Use the currency conversion feature to ensure everything is working correctly.
