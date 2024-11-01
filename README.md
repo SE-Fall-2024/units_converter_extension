@@ -87,7 +87,7 @@ Once the user has installed our extension, all they have to do is click on the e
 </p>
 
 ### 4. Convert Scientific Units
-- The units can now has scientific units such as Energy, Frequency, and Angles. Additionally, it has more functionality for other classes such as length!
+- Units can be converted with more scientific units such as Energy, Frequency, and Angles.
 <p align="center">
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Energy.png" height="300" style="vertical-align: top;"/>
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Frequency.PNG" height="300" style="vertical-align: top;"/>
