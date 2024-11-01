@@ -128,7 +128,7 @@ class Currency {
         return null;
     }
 
-    const url = `https://api.exchangerate.host/convert?access_key=...&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+    const url = `https://api.exchangerate.host/convert?access_key=343382e666bd595595bab5b64003d94c&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
     try {
         const response = await fetch(url);
         const data = await response.json();

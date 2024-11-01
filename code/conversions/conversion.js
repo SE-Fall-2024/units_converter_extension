@@ -5,12 +5,12 @@
 const getPrecisionV = (number) => {
   number = number < 0 ? -1 * number : number;
 
-  let parts = number.toString().split(".");
+  const parts = number.toString().split(".");
   if (parts.length > 1) {
-    let intPart = parts[0].replace(/^0+/, '');
+    const intPart = parts[0].replace(/^0+/, '');
     return intPart.length + parts[1].toString().length;
   }
-  return parts[0].length
+  return parts[0].length;
 
 };
 
