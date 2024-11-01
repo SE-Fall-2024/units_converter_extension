@@ -2,6 +2,7 @@
 /**
  * Currency class handles currency conversions
  */
+ 
 class Currency {
   /**
    * @constructor
@@ -11,6 +12,7 @@ class Currency {
   constructor(unit, arr) {
     this.unit = unit;
     this.arr = arr;
+    
   }
 
   /**
@@ -128,7 +130,7 @@ class Currency {
         return null;
     }
 
-    const url = `https://api.exchangerate.host/convert?access_key=...&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+    const url = `https://api.exchangerate.host/convert?access_key=${API_KEY}&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
