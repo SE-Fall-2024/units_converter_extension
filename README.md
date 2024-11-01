@@ -8,8 +8,8 @@ An extension that converts your selected values into popular units. Save time, m
 ![GitHub issues](https://img.shields.io/github/issues/ncsuswe24/units_converter_extension)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/pulls)
 [![GitHub contributors](https://img.shields.io/github/contributors/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/graphs/contributors)
-[![GitHub Actions Build Status](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml/badge.svg)](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml)
-[![Coverage Status](https://coveralls.io/repos/github/ncsuswe24/units_converter_extension/badge.svg?branch=master)](https://coveralls.io/github/ncsuswe24/units_converter_extension?branch=master)
+[![GitHub Actions Build Status](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml/badge.svg?branch=dev)](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ncsuswe24/units_converter_extension/badge.svg?branch=dev)](https://coveralls.io/github/ncsuswe24/units_converter_extension?branch=dev)
 [![Code Style: ESLint](https://img.shields.io/badge/ESLint-purple.svg)](https://eslint.org/)
 [![Code Formatting: Prettier](https://img.shields.io/badge/Prettier-yellow.svg)](https://prettier.io/)  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
@@ -87,7 +87,12 @@ Once the user has installed our extension, all they have to do is click on the e
 </p>
 
 ### 4. Convert Scientific Units
-
+- Units can be converted with more scientific units such as Energy, Frequency, and Angles.
+<p align="center">
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Energy.png" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Frequency.PNG" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Angle.PNG" height="300" style="vertical-align: top;"/>
+</p>
 
 ## Style Checker and Analyzer
 
@@ -140,14 +145,6 @@ npm will then attempt to run all test files that end with `*.test.js` if you do 
   
   - [Istanbul](https://istanbul.js.org/) and [Coveralls](https://coveralls.io/)
 
-
-## Funding
-The project is not currently funded
-
-## 🌠 Future
-
-See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues/23)
-
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
 
@@ -157,46 +154,25 @@ See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues
 </nav>
 </div>
 
+
 #### "Why" and "Why not" Docs
 
 Think about the case when you shopping on Amazon. When you want to purchase Dumbbells on the website, the weight unit is somewhat you are not familiar with. You will google search the conversion of two units. But now, we have units converter, helping you to covert the unit by a single select with the mouse.
 
-#### Feature Model</br>
 
-```xml
-<!--  This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) -->
-<feature_model name="Unit Converter Extension">
-    <feature_tree> 
-        :r Unit Converter Extension(_r) 
-            :m Length(_r_1) 
-            :m Mass(_r_3) 
-            :m Temperature(_r_4) 
-            :m Time(_r_5) 
-            :m Currency(_r_6) 
-            :m Area(_r_7) 
-            :m Datarate(_r_8) 
-            :m Speed(_r_10) 
-    </feature_tree>
-    <constraints> 
-        constraint_1:_r_1 or _r_7 
-        constraint_2:_r_1 or _r_5 or _r_10 
-    </constraints>
-</feature_model>
-```
+## Funding
+The project is not currently funded.
 
-![feature_model](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Feature_model.png)
 
 ## Troubleshooting
-
 If you encounter any issues during any stage of extension use or you encounter any development-related issues, feel free to reach out to our contact our support team at [unit.convertor.help@gmail.com](mailto:unit.convertor.help@gmail.com).
 
 
 # Contributors
   <table>
   <tr>
-    <td align="center"><a href="https://github.com/drs1951"><img src="https://avatars.githubusercontent.com/u/54364517?v=4" width="100px;" alt=""/><br /><sub><b>Devansh Shah</b></sub></a></td>
-    <td align="center"><a href="https://github.com/shyamal31"><img src="https://avatars.githubusercontent.com/u/57554284?v=4" width="100px;" alt=""/><br /><sub><b>Shyamal Gandhi</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/jaypatel31"><img src="https://avatars.githubusercontent.com/u/59785863?v=4" width="100px;" alt=""/><br /><sub><b>Jay Patel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/shail611"><img src="https://avatars.githubusercontent.com/u/85347670?v=4" width="100px;" alt=""/><br /><sub><b>Shail Shah</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/MiaAmeen"><img src="https://avatars.githubusercontent.com/u/59318487?v=4" width="100px;" alt=""/><br /><sub><b>Mia Ameen</b></sub></a></td>
+    <td align="center"><a href="https://github.com/lakhanij"><img src="https://avatars.githubusercontent.com/u/164538484?v=4" width="100px;" alt=""/><br /><sub><b>Jay Lakhani</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Vaibhav260"><img src="https://avatars.githubusercontent.com/u/90965132?v=4" width="100px;" alt=""/><br /><sub><b>Vaibhav Hawaldar</b></sub></a><br /></td>
   </tr>
 </table>

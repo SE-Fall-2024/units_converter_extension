@@ -130,7 +130,9 @@ class Currency {
         return null;
     }
 
+ 
     const url = `https://api.exchangerate.host/convert?access_key=${API_KEY}&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+ 
     try {
         const response = await fetch(url);
         const data = await response.json();
