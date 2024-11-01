@@ -64,4 +64,15 @@ describe('Precision Value', function() {
     assert.strictEqual(getPreciseNumberV(0.34567), 0.346); // default to 3 decimals, no change needed
   });
 
+  // TESTING DIABOLICAL VALUES
+
+  it("should output NaN for alphabetical input", function () {
+    assert.strictEqual(getPreciseNumberV("ABC"), NaN);
+  });
+  
+
+  it("should output default precision of 0 for null input", function () {
+    assert.strictEqual(getPreciseNumberV(null), 0);
+  });
+
 });
