@@ -22,6 +22,7 @@ An extension that converts your selected values into popular units. Save time, m
 </div>
 
 ## Use Cases
+Say goodbye to the hassle of manual conversions! Our Chrome extension instantly converts any highlighted unit, from currency to scientific measurements, directly on your page—no extra steps needed. With a sleek interface and light/dark modes, you can effortlessly access a comprehensive converter, create custom units, and even track historical exchange rates for currencies. Save time, skip the searches, and make every conversion in a single click.
 
 - Convert $ to ¥ when you are shopping abroad
 - Convert kilometers to miles when you are planning routes before driving
