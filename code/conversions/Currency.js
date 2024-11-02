@@ -111,26 +111,31 @@ class Currency {
         return null;
     }
   }
-  /**
-   * Fetches a historical currency conversion rate for a specified date, base currency, target currency, and amount.
-   * Utilizes exchangerate.host API to retrieve historical conversion data.
-   * 
-   * @async
-   * @param {String} baseCurrency - The currency code to convert from (e.g., "USD").
-   * @param {String} targetCurrency - The currency code to convert to (e.g., "EUR").
-   * @param {String} date - The date for historical conversion in 'YYYY-MM-DD' format.
-   * @param {Number} amount - The amount to be converted.
-   * @returns {Number|null} - The converted amount or null if the API call fails.
-   */
+ /**
+ * Fetches a historical currency conversion rate for a specified date, base currency, target currency, and amount.
+ * Utilizes exchangerate.host API to retrieve historical conversion data.
+ * 
+ * @async
+ * @param {string} baseCurrency - The currency code to convert from (e.g., "USD").
+ * @param {string} targetCurrency - The currency code to convert to (e.g., "EUR").
+ * @param {string} date - The date for historical conversion in 'YYYY-MM-DD' format.
+ * @param {number} [amount=1] - The amount to be converted. Defaults to 1.
+ * @returns {Promise<number|null>} - A promise that resolves to the converted amount, or null if the API call fails.
+ */
   async getHistoricalData(baseCurrency, targetCurrency, date, amount = 1) {
     // Validate date format YYYY-MM-DD // New implemented
+    const GLOBAL = typeof window !== 'undefined' ? window : global;
+
+    // Access API_KEY from the global object
+    const apiKey = GLOBAL.API_KEY;
+
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!dateRegex.test(date)) {
         console.warn("Invalid date format");
         return null;
     }
 
-    const url = `https://api.exchangerate.host/convert?access_key=${API_KEY}&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+    const url = `https://api.exchangerate.host/convert?access_key=${apiKey}&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
