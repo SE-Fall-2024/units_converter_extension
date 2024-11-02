@@ -78,8 +78,13 @@ Once the user has installed our extension, all they have to do is click on the e
 </p>
 
 ### 4. View Historical Exchange Rates
+The View Historical Exchange Rates feature lets users check past exchange rates between two currencies for a specific date. This is ideal for analyzing currency trends, making historical financial calculations, or referencing past rates for transactions and reports.
+<img width="460" alt="Screenshot 2024-11-01 at 8 19 15 PM" src="https://github.com/user-attachments/assets/c893ec33-1385-4638-97ad-6e1ecc86f527">
+<img width="460" alt="Screenshot 2024-11-01 at 8 20 03 PM" src="https://github.com/user-attachments/assets/936daf2b-d15a-4c05-bd56-357bee249125">
 
-### 3. Switch Themes
+
+
+### 5. Switch Themes
 - The unit converter has a light and dark theme, which can be switched between using the simple toggle switch !
 
 <p align="center">
@@ -87,7 +92,7 @@ Once the user has installed our extension, all they have to do is click on the e
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/dark-theme.png" height="300" style="vertical-align: top;"/>
 </p>
 
-### 4. Convert Scientific Units
+### 6. Convert Scientific Units
 - Units can be converted with more scientific units such as Energy, Frequency, and Angles.
 <p align="center">
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Energy.png" height="300" style="vertical-align: top;"/>
