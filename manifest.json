@@ -21,6 +21,7 @@
 		{
 			"matches": ["<all_urls>"],
 			"js": [
+				"Config.js",
 				"code/main_scripts/content_script.js",
 				"code/main_scripts/parser_script.js",
 				"code/main_scripts/units_objects.js",
@@ -37,10 +38,13 @@
 			"css": ["code/styling/content_script.css"]
 		}
 	],
+ 
+
 	"icons": {
 		"16": "assets/logos/units_logo16.png",
 		"48": "assets/logos/units_logo48.png",
 		"128": "assets/logos/units_logo128.png",
 		"256": "assets/logos/units_logo256.png"
 	}
+	
 }
