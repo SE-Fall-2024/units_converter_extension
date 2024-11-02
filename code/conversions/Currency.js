@@ -2,6 +2,7 @@
 /**
  * Currency class handles currency conversions
  */
+ 
 class Currency {
   /**
    * @constructor
@@ -11,6 +12,7 @@ class Currency {
   constructor(unit, arr) {
     this.unit = unit;
     this.arr = arr;
+    
   }
 
   /**
@@ -18,11 +20,11 @@ class Currency {
    * @returns currency rate
    */
   getPrecision(number) {
-    let parts = number.toString().split(".");
+    const parts = number.toString().split('.');
     if (parts.length <= 1) {
       return number < 0 ? parts[0].length - 1 : parts[0].length;
     }
-    let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
+    const intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
     return intlen + parts[1].length;
   }
 
@@ -41,13 +43,13 @@ class Currency {
    * @returns conversion rate for a given query q
    */
   getData(q) {
-    if (typeof fetch !== "function") {
-      let fetch = require("node-fetch");
-      return fetch(" https://open.er-api.com/v6/latest/" + q)
+    if (typeof fetch !== 'function') {
+      const fetch = require('node-fetch');
+      return fetch(' https://open.er-api.com/v6/latest/' + q)
         .then((response) => response.json())
         .then((data) => data.rates);
     } else {
-      return fetch(" https://open.er-api.com/v6/latest/" + q)
+      return fetch(' https://open.er-api.com/v6/latest/' + q)
         .then((response) => response.json())
         .then((data) => data.rates);
     }
@@ -61,54 +63,98 @@ class Currency {
    */
   async getStandardConversion(quantity) {
     let rate;
-    console.log(this.unit.toLowerCase())
+    console.log(this.unit.toLowerCase());
     switch (this.unit.toLowerCase()) {
-      case "usd":
+      case 'usd':
         return quantity;
-      case "eur":
-        rate = await this.getData("EUR").then(function (d) {
-          return d["USD"];
+      case 'eur':
+        rate = await this.getData('EUR').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "gbp":
-        rate = await this.getData("GBP").then(function (d) {
-          return d["USD"];
+      case 'gbp':
+        rate = await this.getData('GBP').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "inr":
-        rate = await this.getData("INR").then(function (d) {
-          return d["USD"];
+      case 'inr':
+        rate = await this.getData('INR').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "jpy":
-        rate = await this.getData("JPY").then(function (d) {
-          return d["USD"];
+      case 'jpy':
+        rate = await this.getData('JPY').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "cad":
-        rate = await this.getData("CAD").then(function (d) {
-          return d["USD"];
+      case 'cad':
+        rate = await this.getData('CAD').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "aud":
-        rate = await this.getData("AUD").then(function (d) {
-          return d["USD"];
+      case 'aud':
+        rate = await this.getData('AUD').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "chf":
-        rate = await this.getData("CHF").then(function (d) {
-          return d["USD"];
+      case 'chf':
+        rate = await this.getData('CHF').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
-      case "cny":
-        rate = await this.getData("CNY").then(function (d) {
-          return d["USD"];
+      case 'cny':
+        rate = await this.getData('CNY').then(function (d) {
+          return d['USD'];
         });
         return rate * quantity;
       default:
         return null;
     }
   }
+ /**
+ * Fetches a historical currency conversion rate for a specified date, base currency, target currency, and amount.
+ * Utilizes exchangerate.host API to retrieve historical conversion data.
+ * 
+ * @async
+ * @param {string} baseCurrency - The currency code to convert from (e.g., "USD").
+ * @param {string} targetCurrency - The currency code to convert to (e.g., "EUR").
+ * @param {string} date - The date for historical conversion in 'YYYY-MM-DD' format.
+ * @param {number} [amount=1] - The amount to be converted. Defaults to 1.
+ * @returns {Promise<number|null>} - A promise that resolves to the converted amount, or null if the API call fails.
+ */
+  async getHistoricalData(baseCurrency, targetCurrency, date, amount = 1) {
+    // Validate date format YYYY-MM-DD // New implemented
+    const GLOBAL = typeof window !== 'undefined' ? window : global;
+
+    // Access API_KEY from the global object
+    const apiKey = GLOBAL.API_KEY;
+
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(date)) {
+        console.warn("Invalid date format");
+        return null;
+    }
+
+    const url = `https://api.exchangerate.host/convert?access_key=${apiKey}&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.success) {
+            return data.result;
+        } else {
+            console.warn(`Failed to fetch historical data: ${data.error || 'Unknown error'}`);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error fetching historical data:", error);
+        return null;
+    }
+}
+
+
+
+
+
 
   /**
    * From our standard conversion we try to convert into all the other units specified in arr property of this class with a precision no more than 10
@@ -118,66 +164,70 @@ class Currency {
    * @returns money after conversion
    */
   async getAllConversions(quantity, precision) {
-    let res = "";
+    let res = '';
     let factor;
     for (let i = 0; i < this.arr.length; i++) {
       switch (this.arr[i].toLowerCase()) {
-        case "usd":
-          res += ",$ " + this.getPreciseNumber(quantity, precision);
+        case 'usd':
+          res += ',$ ' + this.getPreciseNumber(quantity, precision);
           break;
-        case "eur":
-          factor = await this.getData("USD").then(function (d) {
-            return d["EUR"];
+        case 'eur':
+          factor = await this.getData('USD').then(function (d) {
+            return d['EUR'];
           });
-          res += ",€ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',€ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "gbp":
-          factor = await this.getData("USD").then(function (d) {
-            return d["GBP"];
+        case 'gbp':
+          factor = await this.getData('USD').then(function (d) {
+            return d['GBP'];
           });
-          res += ",£ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',£ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "inr":
-          factor = await this.getData("USD").then(function (d) {
-            return d["INR"];
+        case 'inr':
+          factor = await this.getData('USD').then(function (d) {
+            return d['INR'];
           });
-          res += ",₹ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',₹ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "jpy":
-          factor = await this.getData("USD").then(function (d) {
-            return d["JPY"];
+        case 'jpy':
+          factor = await this.getData('USD').then(function (d) {
+            return d['JPY'];
           });
-          res += ",¥ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',¥ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "cad":
-          factor = await this.getData("USD").then(function (d) {
-            return d["CAD"];
+        case 'cad':
+          factor = await this.getData('USD').then(function (d) {
+            return d['CAD'];
           });
-          res += ",C$ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',C$ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "aud":
-          factor = await this.getData("USD").then(function (d) {
-            return d["AUD"];
+        case 'aud':
+          factor = await this.getData('USD').then(function (d) {
+            return d['AUD'];
           });
-          res += ",AU$ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',AU$ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "chf":
-          factor = await this.getData("USD").then(function (d) {
-            return d["CHF"];
+        case 'chf':
+          factor = await this.getData('USD').then(function (d) {
+            return d['CHF'];
           });
-          res += ",Fr " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',Fr ' + this.getPreciseNumber(factor * quantity, precision);
           break;
-        case "cny":
-          factor = await this.getData("USD").then(function (d) {
-            return d["CNY"];
+        case 'cny':
+          factor = await this.getData('USD').then(function (d) {
+            return d['CNY'];
           });
-          res += ",¥ " + this.getPreciseNumber(factor * quantity, precision);
+          res += ',¥ ' + this.getPreciseNumber(factor * quantity, precision);
       }
     }
     return res;
   }
 }
 
-if (typeof module == "object") {
+if (typeof module == 'object') {
   module.exports = Currency;
+} else {
+  window.Currency = Currency; // Make available globally in popup context
 }
+
+

@@ -1,21 +1,28 @@
+<div align="center">
+
 # Smart Units Converter - Browser Extension
+  
+An extension that converts your selected values into popular units. Save time, make life easier :dancer:
 
-An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
-
-![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
-![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
-[![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
-![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
+[![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![GitHub issues](https://img.shields.io/github/issues/ncsuswe24/units_converter_extension)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/ncsuswe24/units_converter_extension)](https://github.com/ncsuswe24/units_converter_extension/graphs/contributors)
+[![GitHub Actions Build Status](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml/badge.svg?branch=dev)](https://github.com/ncsuswe24/units_converter_extension/actions/workflows/npm.yml)
+[![Coverage Status](https://coveralls.io/repos/github/ncsuswe24/units_converter_extension/badge.svg?branch=dev)](https://coveralls.io/github/ncsuswe24/units_converter_extension?branch=dev)
+[![Code Style: ESLint](https://img.shields.io/badge/ESLint-purple.svg)](https://eslint.org/)
+[![Code Formatting: Prettier](https://img.shields.io/badge/Prettier-yellow.svg)](https://prettier.io/)  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
 
-**Click on the image below to view the video**
+**Video demo below:**
 
-[![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1nCN8phch_celSRCWX2G5RxKqbnxRehx-/view?usp=drive_link)
+[![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1km0OGBB_oV7Z7ynN50SRSraJ6Tim_L1T/view?usp=sharing)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![CSS](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+</div>
 
 ## Use Cases
+Say goodbye to the hassle of manual conversions! Our Chrome extension instantly converts any highlighted unit, from currency to scientific measurements, directly on your page—no extra steps needed. With a sleek interface and light/dark modes, you can effortlessly access a comprehensive converter, create custom units, and even track historical exchange rates for currencies. Save time, skip the searches, and make every conversion in a single click.
 
 - Convert $ to ¥ when you are shopping abroad
 - Convert kilometers to miles when you are planning routes before driving
@@ -28,92 +35,70 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
 - Convert Time from a given time zone to another (PST to EST)
-
-  ## Technologies we used:
- - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
- - ![HTML](https://img.shields.io/badge/just%20the%20message-8A2BE2)
- - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
- - ![CSS](https://img.shields.io/badge/CSS-7B2EQ2)
+- If you are a scientist: convert easily between units of scientific measurement like radians, joules, hertz, and more!
 
 ## Installation Guide
 
-### Step 1: Clone [this](https://github.com/shyamal31/units_converter_extension) Repository
+For detailed installation instructions, please refer to the [INSTALL.md](./INSTALL.md) file.
 
-```
-git clone [repository_url]
-
-```
-### Step 2: Go to chrome extensions
-  
-- In the chrome browser open
-  
-  ```
-  chrome://extensions/
-  ```
-### Step 3: Enable developer settings
-- Enable developer settings if it is not enabled
-
-  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1dc7c2ee-cbaa-4308-a3dd-937062d035e8)
-
-### Step 4: Unpack the cloned repository
-- Choose Load Unpacked
-- Select the repository folder that was cloned in the first step
-
-  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/6b1264db-9a24-4846-8c19-e1e925582e1c)
-
-### Step 5: Check the extension added
-- The extension will now be added to the Chrome
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/d8364664-7236-42ee-aa27-ada0c4ce3fcf)
-
-### Step 6: Test the extension
-- Displays the most relevant converted unit first
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
-
-
-- Click on view all button to view all of the converted units for that metric
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
-
-## Popup Features for the user
-To access the popup feature the user has to click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection"
+## Our features:
+Once the user has installed our extension, all they have to do is click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection":
 
 ### 1. Direct conversions
-- This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
-- The user selects the conversion he requires from the given standard conversions
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
-
-- The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
+- This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user!
+- The user selects the conversion they require from the given standard conversions and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick.
+  
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9" height="300" style="vertical-align: top;"/>
+</p>
 
 ### 2. Customized Conversions
 
-- This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
-- This is the example taken where 1 meter is taken as 3 subs
+- This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people. Here, the user added a custom unit 1 meter = 3 subs, and it is visible in the popup:
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
-
-- Testing whether the customized conversion works or not
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8" height="300" style="vertical-align: top;"/>
+</p>
   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
+- These custom units can be deleted as well:
 
-- Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added that allows user to delete his customized conversion.
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae" width="400" style="vertical-align: top;"/>
+</p>
    
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
-
 ### 3. Favorites 
 - This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
-- Here we select pint and gallon as favorites in volume converions. 
-   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+- Here we select pint and gallon as favorites in volume converions so now all the volume conversions will have pint and gallon at the top of the display!
 
-- So now all the volume conversions will have pint and gallon at the top of the display
+<p align="center">
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c" height="300" style="vertical-align: top;"/>
+</p>
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
+### 4. View Historical Exchange Rates
+- The View Historical Exchange Rates feature lets users check past exchange rates between two currencies for a specific date. This is ideal for analyzing currency trends, making historical financial calculations, or referencing past rates for transactions and reports.
+<img width="460" alt="Screenshot 2024-11-01 at 8 19 15 PM" src="https://github.com/user-attachments/assets/c893ec33-1385-4638-97ad-6e1ecc86f527">
+<img width="460" alt="Screenshot 2024-11-01 at 8 20 03 PM" src="https://github.com/user-attachments/assets/936daf2b-d15a-4c05-bd56-357bee249125">
 
+
+
+### 5. Switch Themes
+- The unit converter has a light and dark theme, which can be switched between using the simple toggle switch !
+
+<p align="center">
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/light-theme.png" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/dark-theme.png" height="300" style="vertical-align: top;"/>
+</p>
+
+### 6. Convert Scientific Units
+- Units can be converted with more scientific units such as Energy, Frequency, and Angles.
+<p align="center">
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Energy.png" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Frequency.PNG" height="300" style="vertical-align: top;"/>
+  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Angle.PNG" height="300" style="vertical-align: top;"/>
+</p>
 
 ## Style Checker and Analyzer
 
@@ -141,7 +126,6 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
 
 ## Run Test cases and coverage
 
-
  ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/tree/master/docs/test_doc)
 
  ### Unit Test
@@ -167,63 +151,24 @@ npm will then attempt to run all test files that end with `*.test.js` if you do 
   
   - [Istanbul](https://istanbul.js.org/) and [Coveralls](https://coveralls.io/)
 
+## Documentation
+
+Check out our [Wiki](https://github.com/ncsuswe24/units_converter_extension/wiki/Documentation) !
+
 
 ## Funding
-The project is not currently funded
+The project is not currently funded.
 
-## 🌠 Future
-
-See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues/23)
-
-## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
-#### "What" and "How" Docs
-
-<div>
-<nav>
-    <h2><a href="https://nihitmittal.github.io/units_converter_extension/">JSDoc Generated Documentation</a></h2><h3>Classes</h3><ul><li><a href="https://nihitmittal.github.io/units_converter_extension/Area.html">Area</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Currency.html">Currency</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/DataTransfer.html">DataTransfer</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Data.html">Data</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Length.html">Length</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Mass.html">Mass</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Speed.html">Speed</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Temperature.html">Temperature</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Time.html">Time</a></li><li><a href="https://nihitmittal.github.io/units_converter_extension/Volume.html">Volume</a></li></ul><h3>Global</h3><ul><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#descending_length">descending_length</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#get_conversion_class">get_conversion_class</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#get_conversions">get_conversions</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#get_possible_conversions_list">get_possible_conversions_list</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#getPreciseNumber">getPreciseNumber</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#getPrecision">getPrecision</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#matches_filter">matches_filter</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#POPULAR_UNITS">POPULAR_UNITS</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#showModal">showModal</a></li><li><a href="https://ncsu-s.github.io/units_converter_extension/global.html#UNITS">UNITS</a></li></ul>
-</nav>
-</div>
-
-#### "Why" and "Why not" Docs
-
-Think about the case when you shopping on Amazon. When you want to purchase Dumbbells on the website, the weight unit is somewhat you are not familiar with. You will google search the conversion of two units. But now, we have units converter, helping you to covert the unit by a single select with the mouse.
-
-#### Feature Model</br>
-
-```xml
-<!--  This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) -->
-<feature_model name="Unit Converter Extension">
-    <feature_tree> 
-        :r Unit Converter Extension(_r) 
-            :m Length(_r_1) 
-            :m Mass(_r_3) 
-            :m Temperature(_r_4) 
-            :m Time(_r_5) 
-            :m Currency(_r_6) 
-            :m Area(_r_7) 
-            :m Datarate(_r_8) 
-            :m Speed(_r_10) 
-    </feature_tree>
-    <constraints> 
-        constraint_1:_r_1 or _r_7 
-        constraint_2:_r_1 or _r_5 or _r_10 
-    </constraints>
-</feature_model>
-```
-
-![feature_model](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Feature_model.png)
 
 ## Troubleshooting
-
 If you encounter any issues during any stage of extension use or you encounter any development-related issues, feel free to reach out to our contact our support team at [unit.convertor.help@gmail.com](mailto:unit.convertor.help@gmail.com).
 
 
 # Contributors
   <table>
   <tr>
-    <td align="center"><a href="https://github.com/drs1951"><img src="https://avatars.githubusercontent.com/u/54364517?v=4" width="100px;" alt=""/><br /><sub><b>Devansh Shah</b></sub></a></td>
-    <td align="center"><a href="https://github.com/shyamal31"><img src="https://avatars.githubusercontent.com/u/57554284?v=4" width="100px;" alt=""/><br /><sub><b>Shyamal Gandhi</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/jaypatel31"><img src="https://avatars.githubusercontent.com/u/59785863?v=4" width="100px;" alt=""/><br /><sub><b>Jay Patel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/shail611"><img src="https://avatars.githubusercontent.com/u/85347670?v=4" width="100px;" alt=""/><br /><sub><b>Shail Shah</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/MiaAmeen"><img src="https://avatars.githubusercontent.com/u/59318487?v=4" width="100px;" alt=""/><br /><sub><b>Mia Ameen</b></sub></a></td>
+    <td align="center"><a href="https://github.com/lakhanij"><img src="https://avatars.githubusercontent.com/u/164538484?v=4" width="100px;" alt=""/><br /><sub><b>Jay Lakhani</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Vaibhav260"><img src="https://avatars.githubusercontent.com/u/90965132?v=4" width="100px;" alt=""/><br /><sub><b>Vaibhav Hawaldar</b></sub></a><br /></td>
   </tr>
 </table>

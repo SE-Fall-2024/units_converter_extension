@@ -44,9 +44,9 @@ function get_possible_conversions_list(type, currentUnit) {
  * @returns appropriate conversion class
  */
 function get_conversion_class(type, unit) {
-  if (type == "temperature") {
+  if (type == 'temperature') {
     return new Temperature(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "currency") {
+  } else if (type == 'currency') {
     return new Currency(unit, get_possible_conversions_list(type, unit));
   }
 }
@@ -58,11 +58,11 @@ function get_conversion_class(type, unit) {
  * @returns number's precision
  */
 function getPrecision(number) {
-  let parts = number.toString().split(".");
+  const parts = number.toString().split('.');
   if (parts.length <= 1) {
     return number < 0 ? parts[0].length - 1 : parts[0].length;
   }
-  let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
+  const intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
   return intlen + parts[1].length;
 }
 

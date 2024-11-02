@@ -1,0 +1,3 @@
+// Config.js
+// Insert your API key here
+window.API_KEY = "YOUR_API_KEY";
