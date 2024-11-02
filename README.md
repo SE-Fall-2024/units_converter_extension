@@ -78,7 +78,7 @@ Once the user has installed our extension, all they have to do is click on the e
 </p>
 
 ### 4. View Historical Exchange Rates
-The View Historical Exchange Rates feature lets users check past exchange rates between two currencies for a specific date. This is ideal for analyzing currency trends, making historical financial calculations, or referencing past rates for transactions and reports.
+- The View Historical Exchange Rates feature lets users check past exchange rates between two currencies for a specific date. This is ideal for analyzing currency trends, making historical financial calculations, or referencing past rates for transactions and reports.
 <img width="460" alt="Screenshot 2024-11-01 at 8 19 15 PM" src="https://github.com/user-attachments/assets/c893ec33-1385-4638-97ad-6e1ecc86f527">
 <img width="460" alt="Screenshot 2024-11-01 at 8 20 03 PM" src="https://github.com/user-attachments/assets/936daf2b-d15a-4c05-bd56-357bee249125">
 
