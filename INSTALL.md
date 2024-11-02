@@ -43,7 +43,7 @@ git clone [repository_url]
 
 ### Step 2: Create and Configure Config.js
 1. Locate the Example File: In the root directory of the project, find the file named Config.js.example.
-2. Create Config.js: Make a copy of this file and rename it to Config.js in the same directory.
+2. Create Config.js: Make a copy of this file and then create a Config.js file in the same directory paste the copied contain there.
 3. Insert Your API Key: Replace the placeholder "YOUR_API_KEY_HERE" with the API key you obtained.
 
 Important: Do not commit Config.js to any public repository, as it contains your personal API key.
