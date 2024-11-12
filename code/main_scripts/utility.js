@@ -21,7 +21,7 @@ function descending_length(a, b) {
  */
 function matches_filter(currentUnit) {
   return function (element) {
-    return element.toLowerCase() != currentUnit.toLowerCase();
+    return element.toLowerCase() !== currentUnit.toLowerCase();
   };
 }
 
@@ -44,9 +44,9 @@ function get_possible_conversions_list(type, currentUnit) {
  * @returns appropriate conversion class
  */
 function get_conversion_class(type, unit) {
-  if (type == 'temperature') {
+  if (type === 'temperature') {
     return new Temperature(unit, get_possible_conversions_list(type, unit));
-  } else if (type == 'currency') {
+  } else if (type === 'currency') {
     return new Currency(unit, get_possible_conversions_list(type, unit));
   }
 }

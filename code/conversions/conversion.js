@@ -5,22 +5,21 @@
 const getPrecisionV = (number) => {
   number = number < 0 ? -1 * number : number;
 
-  const parts = number.toString().split(".");
+  const parts = number.toString().split('.');
   if (parts.length > 1) {
     const intPart = parts[0].replace(/^0+/, '');
     return intPart.length + parts[1].toString().length;
   }
   return parts[0].length;
-
 };
 
 /**
- * Returns a rounded version of the given number, 
+ * Returns a rounded version of the given number,
  * rounded precisely to the number of decimal points needed
- * The precision needed is the max value between the given precision 
- *  and current precision of the number. 
- * @param {Number} number 
- * @param {Number} precision 
+ * The precision needed is the max value between the given precision
+ *  and current precision of the number.
+ * @param {Number} number
+ * @param {Number} precision
  * @returns The rounded number value
  */
 const getPreciseNumberV = (number, precision) => {
@@ -71,6 +70,5 @@ module.exports = {
   getStandardConversion,
   getAllConversions,
   getPrecisionV,
-  getPreciseNumberV
+  getPreciseNumberV,
 };
-

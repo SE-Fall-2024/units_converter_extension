@@ -102,7 +102,7 @@ function getDateIfNotExist(dateTimeString) {
 function getAllTimeConversions(inputString) {
   inputString = [inputString];
   var res = '';
-  const cleanedStrings = inputString.map((input) => {
+  inputString.map((input) => {
     // Remove parentheses without removing their contents
     input = input.replace(/[()]/g, '');
     // Remove "rd", "st", "th", "nd" only when they appear after a numeric day
@@ -129,7 +129,7 @@ function getAllTimeConversions(inputString) {
       input = containsDay + ' ' + input.replace(containsDay, '').trim();
     }
 
-    if (new Date(input) == 'Invalid Date') {
+    if (new Date(input) === 'Invalid Date') {
       input = input.replace(containsDay, '').trim();
       input = getDateIfNotExist(input);
     }
