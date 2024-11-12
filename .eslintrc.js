@@ -1,12 +1,12 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 'latest', // or 'latest' for ES2021+
-    sourceType: 'module', // if you're using ES modules
+    ecmaVersion: 'latest', 
+    sourceType: 'module', 
   },
   env: {
-    es6: true, // Enables ES6 features
-    node: true, // If you're running in a Node.js environment
-    browser: true, // If you're targeting browser environments
+    es6: true, 
+    node: true, 
+    browser: true, 
   },
   overrides: [
     {
@@ -18,11 +18,7 @@ module.exports = {
         'no-unused-vars': 'warn',
         eqeqeq: 'error',
         'no-use-before-define': 'error',
-        'consistent-return': 'error',
-        camelcase: 'error',
         quotes: ['error', 'single'],
-        'no-multiple-empty-lines': ['error', { max: 1 }],
-        complexity: ['warn', 10],
       },
     },
   ],
