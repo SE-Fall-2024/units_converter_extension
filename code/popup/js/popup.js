@@ -1,23 +1,23 @@
 const unit =  [];
-unit['usd'] = "$";
-unit['eur'] = "€";
-unit['gbp'] = "£";
-unit['inr'] = "₹";
-unit['yen'] = "¥";
-unit['cad'] = "C$";
-unit['aud'] = "AU$";
-unit['chf'] = "Fr";
-unit['cny'] = "¥";
-unit["celcius"] = "°C";
-unit["fahrenheit"] = "°F";
-unit["kelvin"] = "°K";
+unit['usd'] = '$';
+unit['eur'] = '€';
+unit['gbp'] = '£';
+unit['inr'] = '₹';
+unit['yen'] = '¥';
+unit['cad'] = 'C$';
+unit['aud'] = 'AU$';
+unit['chf'] = 'Fr';
+unit['cny'] = '¥';
+unit['celcius'] = '°C';
+unit['fahrenheit'] = '°F';
+unit['kelvin'] = '°K';
 
 $(function() {
     // type Selector Populate
-    const typeSelector = $("#type_selector");
-    const favouriteTypeSelector = $("#favourite_type_selector");
-    const customTypeSelector = $("#custom_type_selector");
-    const historyTypeSelector = $("#history_type_selector");
+    const typeSelector = $('#type_selector');
+    const favouriteTypeSelector = $('#favourite_type_selector');
+    const customTypeSelector = $('#custom_type_selector');
+    const historyTypeSelector = $('#history_type_selector');
     const typeSelectorOptionsArray = Object.keys(POPULAR_UNITS);
     
     typeSelectorOptionsArray.forEach(function (type) {
@@ -32,15 +32,15 @@ $(function() {
         }));
 
         console.log(type);
-        if(type != "temperature" && type != "currency"){
+        if(type != 'temperature' && type != 'currency'){
             customTypeSelector.append($('<option>', {
                 value: type,
                 text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
             }));
         }
         
-        if(type == "currency"){
-            POPULAR_UNITS["currency"].forEach(function(currency) {
+        if(type == 'currency'){
+            POPULAR_UNITS['currency'].forEach(function(currency) {
                 historyTypeSelector.append($('<option>', {
                     value: currency,
                     text: currency.charAt(0).toUpperCase() + currency.slice(1) // Capitalize the first letter
@@ -49,17 +49,17 @@ $(function() {
         }
     });
 
-    $("#custom_unit_add").on("click",function(e){
+    $('#custom_unit_add').on('click',function(e){
         addCustomUnitVal(e);
     });
 
-    $("#custom_unit_delete").on("click",function(e){
+    $('#custom_unit_delete').on('click',function(e){
         deleteCustomUnitVal(e);
     });
     
-    $("#toggle_theme").on("change",function(){
-        console.log("switch theme...");
-        document.body.classList.toggle("dark-theme", this.checked);
+    $('#toggle_theme').on('change',function(){
+        console.log('switch theme...');
+        document.body.classList.toggle('dark-theme', this.checked);
     });
 
     typeSelector.on('change', function (e) {
@@ -74,7 +74,7 @@ $(function() {
         const selectedCurrency = $(this).val();
         console.log(selectedCurrency);
 
-        const graphUrl = `./js/poop.png`; // Change this to the actual URL for your graphs
+        const graphUrl = './js/poop.png'; // Change this to the actual URL for your graphs
         $('#currency_graph').attr('src', graphUrl).show();
 
         // const xValues = [50,60,70,80,90,100,110,120,130,140,150];
@@ -101,40 +101,40 @@ $(function() {
         // });
     });
 
-    const unitSelectorLeftVal = $("#left_input");
-    const unitSelectorRightVal = $("#right_input");
+    const unitSelectorLeftVal = $('#left_input');
+    const unitSelectorRightVal = $('#right_input');
 
     unitSelectorLeftVal.on('change', function () {
-        getConversion("left");
+        getConversion('left');
     });
     
     unitSelectorRightVal.on('change', function () {
-        getConversion("right");
+        getConversion('right');
     });
     populateUnit();
     populateFavUnit();
     populateCustomUnit();
 
-    $(".tablinks").on("click",function () {
+    $('.tablinks').on('click',function () {
         // let type = $(this).attr("id")
-        $(".tablinks").removeClass("selected");
-        $(this).addClass("selected");
+        $('.tablinks').removeClass('selected');
+        $(this).addClass('selected');
         const tab = $(this).children().html();
-        $(".tab_container").hide();
+        $('.tab_container').hide();
         $(`.${tab}`).show();
     });
 
-    $("#favourite_type_selector").on("change",function(e){
+    $('#favourite_type_selector').on('change',function(e){
         populateFavUnit(e);
     });
 
 });
 
 const addCustomUnitVal = () => {
-    const baseUnit = $("#custom_unit_base").val();
-    const customTypeSelector = $("#custom_type_selector").val();
-    const customUnitName = $("#custom_unit_name_left").val();
-    const customUnitRatio = $("#custom_unit_value_right").val();
+    const baseUnit = $('#custom_unit_base').val();
+    const customTypeSelector = $('#custom_type_selector').val();
+    const customUnitName = $('#custom_unit_name_left').val();
+    const customUnitRatio = $('#custom_unit_value_right').val();
 
     addCustomUnit({
         unit: customUnitName,
@@ -145,15 +145,15 @@ const addCustomUnitVal = () => {
         populateCustomUnit();
     });
 
-    $("#custom_unit_name_left").val("");
-    $("#custom_unit_value_right").val("");
+    $('#custom_unit_name_left').val('');
+    $('#custom_unit_value_right').val('');
 
 };
 
 const deleteCustomUnitVal = () => {
-    const baseUnit = $("#custom_unit_base").val();
-    const customTypeSelector = $("#custom_type_selector").val();
-    const customUnitName = $("#delete_type_selector").val();
+    const baseUnit = $('#custom_unit_base').val();
+    const customTypeSelector = $('#custom_type_selector').val();
+    const customUnitName = $('#delete_type_selector').val();
 
     deleteCustomUnit({
         unit: customUnitName,
@@ -163,16 +163,16 @@ const deleteCustomUnitVal = () => {
         populateCustomUnit();
     });
 
-    $("#custom_unit_name_left").val("");
-    $("#custom_unit_value_right").val("");
+    $('#custom_unit_name_left').val('');
+    $('#custom_unit_value_right').val('');
 
 
 };
 
 const populateCustomUnit = () => {
-    const baseUnit = $("#custom_unit_base");
-    const customTypeSelector = $("#custom_type_selector");
-    const deleteCustomTypeSelector = $("#delete_type_selector");
+    const baseUnit = $('#custom_unit_base');
+    const customTypeSelector = $('#custom_type_selector');
+    const deleteCustomTypeSelector = $('#delete_type_selector');
 
     const unitField = UNITS.filter(unit=>{
         return unit.type == customTypeSelector.val() && unit.ratio == 1;
@@ -211,13 +211,13 @@ const populateCustomUnit = () => {
 
         if(notFound){
             deleteCustomTypeSelector.append($('<option>', {
-                value: "No Custom Unit Found",
-                text: "No Custom Unit Found"
+                value: 'No Custom Unit Found',
+                text: 'No Custom Unit Found'
             }));
 
-            $("#custom_unit_delete").hide();
+            $('#custom_unit_delete').hide();
         }else{
-            $("#custom_unit_delete").show();
+            $('#custom_unit_delete').show();
         }
     
         
@@ -225,8 +225,8 @@ const populateCustomUnit = () => {
 };
 
 const populateUnit = () => {
-    const unitSelector = $("#unit_selector_left");
-    const type = $("#type_selector").val();
+    const unitSelector = $('#unit_selector_left');
+    const type = $('#type_selector').val();
 
 
     unitSelector.off('change');
@@ -257,7 +257,7 @@ const populateUnit = () => {
     
         // there is unit_selector_right, it should have all the value same as left just expect the value selected in left
     
-        const unitSelectorRight = $("#unit_selector_right");
+        const unitSelectorRight = $('#unit_selector_right');
         unitSelectorRight.off('change');
         console.log(unitSelectorRight);
         unitSelectorRight.empty();
@@ -276,15 +276,15 @@ const populateUnit = () => {
             updateUnitSelectorsLeft(type);
         });
     
-        getConversion("left");
+        getConversion('left');
     });
     
    
 };
 
 const populateFavUnit = () => {
-    const container = $("#units_container");
-    const type = $("#favourite_type_selector").val();
+    const container = $('#units_container');
+    const type = $('#favourite_type_selector').val();
     container.empty();
     const favouriteArr = localStorage.getItem('favouriteArr')?JSON.parse(localStorage.getItem('favouriteArr')):[];
 
@@ -306,8 +306,8 @@ const populateFavUnit = () => {
             var checkbox = $('<input>', {
                 type: 'checkbox',
                 id: 'checkbox_' + ut,
-                value: type=="currency" || type=="temperature"?unit[ut.toLocaleLowerCase()]:ut,
-                checked:type=="currency" || type=="temperature"?favouriteArr.includes(unit[ut.toLocaleLowerCase()])?true:false:favouriteArr.includes(ut)?true:false
+                value: type=='currency' || type=='temperature'?unit[ut.toLocaleLowerCase()]:ut,
+                checked:type=='currency' || type=='temperature'?favouriteArr.includes(unit[ut.toLocaleLowerCase()])?true:false:favouriteArr.includes(ut)?true:false
             });
             
             var label = $('<label>', {
@@ -333,7 +333,7 @@ const handleCheckboxChange = async (e) => {
     let favouriteArr =  chrome.storage.sync.get(['favouriteArr']).then(async (result)=>{
         console.log(result,val);
         favouriteArr =  result.favouriteArr? JSON.parse(result.favouriteArr):[];
-        if($(e).is(":checked")){
+        if($(e).is(':checked')){
             favouriteArr.push(val);
         }
         else{
@@ -341,14 +341,14 @@ const handleCheckboxChange = async (e) => {
         }
         console.log(favouriteArr);
         localStorage.setItem('favouriteArr',JSON.stringify(favouriteArr));
-        await chrome.storage.sync.set({"favouriteArr":JSON.stringify(favouriteArr)});
+        await chrome.storage.sync.set({'favouriteArr':JSON.stringify(favouriteArr)});
     });
     
 };
 
 function updateUnitSelectorsRight(type) {
-    const unitSelectorLeft = $("#unit_selector_left");
-    const unitSelectorRight = $("#unit_selector_right");
+    const unitSelectorLeft = $('#unit_selector_left');
+    const unitSelectorRight = $('#unit_selector_right');
 
     const selectedUnitLeft = unitSelectorLeft.val();
     const selectedUnitRight = unitSelectorRight.val();
@@ -366,12 +366,12 @@ function updateUnitSelectorsRight(type) {
     });
     if(unitSelectorRight.val() != selectedUnitLeft) unitSelectorLeft.val(selectedUnitLeft);
     if(unitSelectorLeft.val() != selectedUnitRight) unitSelectorRight.val(selectedUnitRight);
-    getConversion("left");
+    getConversion('left');
 }
 
 function updateUnitSelectorsLeft(type) {
-    const unitSelectorLeft = $("#unit_selector_left");
-    const unitSelectorRight = $("#unit_selector_right");
+    const unitSelectorLeft = $('#unit_selector_left');
+    const unitSelectorRight = $('#unit_selector_right');
 
     const selectedUnitLeft = unitSelectorLeft.val();
     const selectedUnitRight = unitSelectorRight.val();
@@ -386,32 +386,32 @@ function updateUnitSelectorsLeft(type) {
     });
     if(unitSelectorRight.val() != selectedUnitLeft) unitSelectorLeft.val(selectedUnitLeft);
     if(unitSelectorLeft.val() != selectedUnitRight) unitSelectorRight.val(selectedUnitRight);
-    getConversion("left");
+    getConversion('left');
 }
 
 const getConversion = async (change) => {
-    const typeSelector = $("#type_selector").val();
+    const typeSelector = $('#type_selector').val();
 
-    if(typeSelector == ""){
+    if(typeSelector == ''){
         return;
     }
 
-    let unitSelectorLeftVal = $("#unit_selector_left").val();
-    let unitSelectorRightVal = $("#unit_selector_right").val();
+    let unitSelectorLeftVal = $('#unit_selector_left').val();
+    let unitSelectorRightVal = $('#unit_selector_right').val();
 
-    const leftVal = $("#left_input").val();
-    const rightVal = $("#right_input").val();
+    const leftVal = $('#left_input').val();
+    const rightVal = $('#right_input').val();
 
-    if(unitSelectorRightVal == "jpy"){
-        unitSelectorRightVal = "yen";
+    if(unitSelectorRightVal == 'jpy'){
+        unitSelectorRightVal = 'yen';
     }
-    if(unitSelectorLeftVal == "jpy"){
-        unitSelectorLeftVal = "yen";
+    if(unitSelectorLeftVal == 'jpy'){
+        unitSelectorLeftVal = 'yen';
     }
 
     console.log(`${leftVal} ${unitSelectorLeftVal}`,`${rightVal} ${unitSelectorRightVal}`);
     let result;
-    if(change=="left"){
+    if(change=='left'){
         result = await get_conversions(`${leftVal} ${unitSelectorLeftVal}`);
     }else{
         result = await get_conversions(`${rightVal} ${unitSelectorRightVal}`);
@@ -420,29 +420,29 @@ const getConversion = async (change) => {
     const elements = result.split(',').filter(element => element.trim() !== '');
     console.log(elements,unitSelectorRightVal,unitSelectorLeftVal);
     
-    if(typeSelector=="currency" || typeSelector == "temperature"){
+    if(typeSelector=='currency' || typeSelector == 'temperature'){
         unitSelectorRightVal = unit[unitSelectorRightVal];
         unitSelectorLeftVal = unit[unitSelectorLeftVal];
     }
     console.log(unitSelectorRightVal,unitSelectorLeftVal);
     
     
-    if(change=="left"){
-        $("#right_input").val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorRightVal)>-1)].split(" ")[typeSelector=="currency"?1:0]);
+    if(change=='left'){
+        $('#right_input').val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorRightVal)>-1)].split(' ')[typeSelector=='currency'?1:0]);
     }else{
-        $("#left_input").val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorLeftVal)>-1)].split(" ")[typeSelector=="currency"?1:0]);
+        $('#left_input').val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorLeftVal)>-1)].split(' ')[typeSelector=='currency'?1:0]);
     }
    
     const currencyInstance = new Currency();
     $(function() {
         // Currency symbols
         const unit = {
-            'usd': "$", 'eur': "€", 'gbp': "£", 'inr': "₹", 'yen': "¥",
-            'cad': "C$", 'aud': "AU$", 'chf': "Fr", 'cny': "¥",
-            'celcius': "°C", 'fahrenheit': "°F", 'kelvin': "°K"
+            'usd': '$', 'eur': '€', 'gbp': '£', 'inr': '₹', 'yen': '¥',
+            'cad': 'C$', 'aud': 'AU$', 'chf': 'Fr', 'cny': '¥',
+            'celcius': '°C', 'fahrenheit': '°F', 'kelvin': '°K'
         };
         
-        const currencies = ["USD", "EUR", "GBP", "INR", "JPY", "CAD", "AUD", "CHF", "CNY"];
+        const currencies = ['USD', 'EUR', 'GBP', 'INR', 'JPY', 'CAD', 'AUD', 'CHF', 'CNY'];
         
         // Populate target currency based on base currency selection
         $('#base_currency').on('change', function() {
@@ -461,24 +461,24 @@ const getConversion = async (change) => {
         });
         $('#base_currency').trigger('change');
         // Event listener for the convert button
-        $("#compare_button").on("click", async function() {
-            const date = $("#historical_date").val();
-            const baseCurrency = $("#base_currency").val();
-            const targetCurrency = $("#target_currency").val();
-            const amount = $("#amount").val();
+        $('#compare_button').on('click', async function() {
+            const date = $('#historical_date').val();
+            const baseCurrency = $('#base_currency').val();
+            const targetCurrency = $('#target_currency').val();
+            const amount = $('#amount').val();
             
             if (date && baseCurrency && targetCurrency && amount) {
                 const currencyInstance = new Currency();
                 const rate = await currencyInstance.getHistoricalData(baseCurrency, targetCurrency, date, amount);
-                const resultDiv = $("#result");
+                const resultDiv = $('#result');
                 
                 if (rate) {
                     resultDiv.text(`On ${date}, ${amount} ${baseCurrency} = ${rate} ${targetCurrency}`);
                 } else {
-                    resultDiv.text("Error fetching historical rate.");
+                    resultDiv.text('Error fetching historical rate.');
                 }
             } else {
-                alert("Please fill in all fields.");
+                alert('Please fill in all fields.');
             }
         });
     });

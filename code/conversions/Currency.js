@@ -131,7 +131,7 @@ class Currency {
 
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!dateRegex.test(date)) {
-        console.warn("Invalid date format");
+        console.warn('Invalid date format');
         return null;
     }
 
@@ -146,7 +146,7 @@ class Currency {
             return null;
         }
     } catch (error) {
-        console.error("Error fetching historical data:", error);
+        console.error('Error fetching historical data:', error);
         return null;
     }
 }
@@ -224,7 +224,7 @@ class Currency {
   }
 }
 
-if (typeof module == 'object') {
+if (typeof module === 'object') {
   module.exports = Currency;
 } else {
   window.Currency = Currency; // Make available globally in popup context

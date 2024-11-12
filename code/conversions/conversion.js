@@ -5,7 +5,7 @@
 const getPrecisionV = (number) => {
   number = number < 0 ? -1 * number : number;
 
-  const parts = number.toString().split(".");
+  const parts = number.toString().split('.');
   if (parts.length > 1) {
     const intPart = parts[0].replace(/^0+/, '');
     return intPart.length + parts[1].toString().length;
