@@ -14,7 +14,6 @@ module.exports = {
       rules: {
         semi: 'error',
         'prefer-const': 'error',
-        'no-console': 'error',
         'no-unused-vars': 'warn',
         eqeqeq: 'error',
         'no-use-before-define': 'error',

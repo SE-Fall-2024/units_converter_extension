@@ -7,6 +7,20 @@ document.body.appendChild(unitModal);
 unitModal.addEventListener('mouseup', (e) => e.stopPropagation());
 unitModal.addEventListener('mousedown', (e) => e.stopPropagation());
 
+/**
+ * Display the modal at the cursor location and make it visible
+ * @param {Object} mouseX
+ * @param {Object} mouseY
+ * @param {Object} html
+ */
+// Display the modal at the cursor location and make it visible
+function showModal(mouseX, mouseY, html) {
+  unitModal.innerHTML = html;
+  unitModal.style.top = document.documentElement.scrollTop + mouseY + 'px';
+  unitModal.style.left = mouseX + 'px';
+  unitModal.style.visibility = 'visible';
+}
+
 // This function checks selected text (if any) when the mouse button is released and checks if  we can convert it into units
 document.addEventListener(
   'mouseup',
@@ -27,7 +41,7 @@ document.addEventListener(
           let modalContent = '';
           if (elements.length > 1) {
             // let favouriteArr = localStorage.getItem('favouriteArr')?JSON.parse(localStorage.getItem('favouriteArr')):[]
-            const rr = chrome.storage.sync
+            chrome.storage.sync
               .get(['favouriteArr'])
               .then((result) => {
                 const r = result.favouriteArr
@@ -66,25 +80,11 @@ document.addEventListener(
 // This function hides the modal when the mouse button is pressed
 document.addEventListener(
   'mousedown',
-  (e) => {
+  () => {
     unitModal.style.visibility = 'hidden';
   },
   false
 );
-
-/**
- * Display the modal at the cursor location and make it visible
- * @param {Object} mouseX
- * @param {Object} mouseY
- * @param {Object} html
- */
-// Display the modal at the cursor location and make it visible
-function showModal(mouseX, mouseY, html) {
-  unitModal.innerHTML = html;
-  unitModal.style.top = document.documentElement.scrollTop + mouseY + 'px';
-  unitModal.style.left = mouseX + 'px';
-  unitModal.style.visibility = 'visible';
-}
 
 document.addEventListener('click', function (event) {
   if (event.target && event.target.id === 'viewAllButton') {

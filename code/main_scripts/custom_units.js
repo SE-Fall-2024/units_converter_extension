@@ -27,13 +27,6 @@
 //   console.log("Value currently is " + result.key);
 // });
 
-const addCustomUnit = async (unitObject) => {
-  const storedUnits = (await getStoredUnits()) ? await getStoredUnits() : [];
-  storedUnits.push(unitObject);
-  console.log(storedUnits);
-  return chrome.storage.sync.set({ customUnits: storedUnits });
-};
-
 const deleteCustomUnit = async (unitObject) => {
   const storedUnits = await getStoredUnits();
   const newStoredUnits = storedUnits.filter((u) => {
@@ -46,6 +39,13 @@ const getStoredUnits = async () => {
   return chrome.storage.sync.get(['customUnits']).then((result) => {
     return result.customUnits ? result.customUnits : [];
   });
+};
+
+const addCustomUnit = async (unitObject) => {
+  const storedUnits = (await getStoredUnits()) ? await getStoredUnits() : [];
+  storedUnits.push(unitObject);
+  console.log(storedUnits);
+  return chrome.storage.sync.set({ customUnits: storedUnits });
 };
 
 const getAllUnits = async () => {

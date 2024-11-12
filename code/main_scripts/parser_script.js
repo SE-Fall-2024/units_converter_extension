@@ -39,7 +39,7 @@ async function get_conversions(selection) {
         // console.log(measure_RE)
         var matches = selection.match(measure_RE);
         // console.log(matches);
-        if (matches != null && matches[0] != null) {
+        if (matches !== null && matches[0] !== null) {
           // let quantity = eval(matches[1].replaceAll(",", "").replace("−", "-"));
           matches = matches[1].toLowerCase();
           // let quantity=matches.replace(aliases[i],'')
@@ -54,7 +54,7 @@ async function get_conversions(selection) {
             unitObject.type,
             unitObject.unit
           );
-          if (unitObject.type == 'currency') {
+          if (unitObject.type === 'currency') {
             result = (async () => {
               const std_converison =
                 await conversion_class.getStandardConversion(quantity);
@@ -64,7 +64,7 @@ async function get_conversions(selection) {
               );
             })();
             // console.log(result)
-          } else if (unitObject.type == 'temperature') {
+          } else if (unitObject.type === 'temperature') {
             const std_converison =
               conversion_class.getStandardConversion(quantity);
             //console.log("Standard Conversion: - ",std_converison);
