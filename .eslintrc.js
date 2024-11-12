@@ -1,12 +1,12 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 'latest', 
-    sourceType: 'module', 
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   env: {
-    es6: true, 
-    node: true, 
-    browser: true, 
+    es6: true,
+    node: true,
+    browser: true,
   },
   overrides: [
     {
