@@ -1,4 +1,4 @@
-name: Mocha
+name: tests-coverage
 
 on:
   push:
@@ -27,18 +27,6 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: npm install
-
-      # Install mocha and chai as dev dependencies
-      - name: Install Mocha and Chai
-        run: npm install --save-dev mocha chai nyc coveralls
-
-      # Do some linting
-      - name: Run style/syntax checking
-        run: npm run lint
-
-      # Make it prettier
-      - name: Run code formatting
-        run: npm run format
         
       # Run tests
       - name: Run tests
