@@ -52,9 +52,9 @@ const getAllUnits = async () => {
   const storedUnits = await getStoredUnits();
   console.log(storedUnits);
   if (!storedUnits || storedUnits.length === 0) {
-    return UNITS_POPUP;
+    return UNITS;
   }
-  return UNITS_POPUP.concat(storedUnits);
+  return UNITS.concat(storedUnits);
 };
 
 module.exports = { addCustomUnit, getStoredUnits, getAllUnits };

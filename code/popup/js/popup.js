@@ -438,9 +438,9 @@ const getConversion = async (change) => {
   );
   let result;
   if (change == 'left') {
-    result = await get_conversions_popup(`${leftVal} ${unitSelectorLeftVal}`);
+    result = await get_conversions(`${leftVal} ${unitSelectorLeftVal}`);
   } else {
-    result = await get_conversions_popup(`${rightVal} ${unitSelectorRightVal}`);
+    result = await get_conversions(`${rightVal} ${unitSelectorRightVal}`);
   }
 
   const elements = result.split(',').filter((element) => element.trim() !== '');
