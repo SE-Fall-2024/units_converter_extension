@@ -20,6 +20,7 @@ document.addEventListener(
       (async () => {
         console.log(selection);
         const result = await get_conversions(selection);
+        console.log(result);
         if (result.length > 0) {
           const elements = result
             .split(',')
@@ -41,6 +42,7 @@ document.addEventListener(
 
                 console.log(conditionMet);
 
+                //console.log(elements);
                 modalContent = `<p class="modal_heading">${selection}</p>`;
                 elements.forEach((element, index) => {
                   console.log(element.split(' '), r);
