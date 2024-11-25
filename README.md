@@ -172,3 +172,12 @@ If you encounter any issues during any stage of extension use or you encounter a
     <td align="center"><a href="https://github.com/Vaibhav260"><img src="https://avatars.githubusercontent.com/u/90965132?v=4" width="100px;" alt=""/><br /><sub><b>Vaibhav Hawaldar</b></sub></a><br /></td>
   </tr>
 </table>
+
+## Iteration 3:
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""><br><b>Nick Case</b></a></td>
+    <td align="center"><br><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""><br><b>Hannah Estes</b></a><br><a href="https://github.com/hannahe6"><b>(second account)</b></a></td>
+    <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""><br><b>Satwika Kancharla</b></a></td>
+  </tr>
+</table>
