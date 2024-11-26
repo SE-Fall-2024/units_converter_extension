@@ -33,7 +33,7 @@ async function get_conversions(selection) {
         //console.log('measure_RE', measure_RE);
         //console.log('selection', selection);
         const matches = selection.match(measure_RE);
-        if (matches != null && matches[0] != null) {
+        if (matches !== null && matches[0] !== null) {
           const quantity = matches[1]
             .toLowerCase()
             .replace(aliases[i], '')
@@ -90,7 +90,7 @@ async function get_conversions(selection) {
             unitObject.unit
           );
 
-          if (unitObject.type == 'currency') {
+          if (unitObject.type === 'currency') {
             const dollar = [
               'dollars',
               'dollar',
@@ -152,7 +152,7 @@ async function get_conversions(selection) {
               precision
             );
             return result;
-          } else if (unitObject.type == 'temperature') {
+          } else if (unitObject.type === 'temperature') {
             const std_conversion =
               conversion_class.getStandardConversion(quantity);
             result = conversion_class.getAllConversions(

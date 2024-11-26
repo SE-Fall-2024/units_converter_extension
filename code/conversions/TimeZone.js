@@ -165,7 +165,7 @@ function getAllTimeConversions(inputString) {
       input = containsDay + ' ' + input.replace(containsDay, '').trim();
     }
 
-    if (new Date(input) == 'Invalid Date') {
+    if (new Date(input) === 'Invalid Date') {
       input = input.replace(containsDay, '').trim();
       input = getDateIfNotExist(input);
     }

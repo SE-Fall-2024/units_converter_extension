@@ -36,7 +36,7 @@ $(function () {
     );
 
     console.log(type);
-    if (type != 'temperature' && type != 'currency') {
+    if (type !=='temperature' && type !=='currency') {
       customTypeSelector.append(
         $('<option>', {
           value: type,
@@ -45,7 +45,7 @@ $(function () {
       );
     }
 
-    if (type == 'currency') {
+    if (type === 'currency') {
       POPULAR_UNITS['currency'].forEach(function (currency) {
         historyTypeSelector.append(
           $('<option>', {
@@ -179,7 +179,7 @@ const populateCustomUnit = () => {
   const deleteCustomTypeSelector = $('#delete_type_selector');
 
   const unitField = UNITS.filter((unit) => {
-    return unit.type == customTypeSelector.val() && unit.ratio == 1;
+    return unit.type === customTypeSelector.val() && unit.ratio === 1;
   });
   console.log(unitField);
   baseUnit.empty();
@@ -312,11 +312,11 @@ const populateFavUnit = () => {
         type: 'checkbox',
         id: 'checkbox_' + ut,
         value:
-          type == 'currency' || type == 'temperature'
+          type === 'currency' || type === 'temperature'
             ? unit[ut.toLocaleLowerCase()]
             : ut,
         checked:
-          type == 'currency' || type == 'temperature'
+          type === 'currency' || type === 'temperature'
             ? favouriteArr.includes(unit[ut.toLocaleLowerCase()])
               ? true
               : false
@@ -351,7 +351,7 @@ const handleCheckboxChange = async (e) => {
       if ($(e).is(':checked')) {
         favouriteArr.push(val);
       } else {
-        favouriteArr = favouriteArr.filter((ele) => ele != val);
+        favouriteArr = favouriteArr.filter((ele) => ele !==val);
       }
       console.log(favouriteArr);
       localStorage.setItem('favouriteArr', JSON.stringify(favouriteArr));
@@ -381,9 +381,9 @@ function updateUnitSelectorsRight(type) {
         })
       );
     });
-  if (unitSelectorRight.val() != selectedUnitLeft)
+  if (unitSelectorRight.val() !==selectedUnitLeft)
     unitSelectorLeft.val(selectedUnitLeft);
-  if (unitSelectorLeft.val() != selectedUnitRight)
+  if (unitSelectorLeft.val() !==selectedUnitRight)
     unitSelectorRight.val(selectedUnitRight);
   getConversion('left');
 }
@@ -405,9 +405,9 @@ function updateUnitSelectorsLeft(type) {
       })
     );
   });
-  if (unitSelectorRight.val() != selectedUnitLeft)
+  if (unitSelectorRight.val() !==selectedUnitLeft)
     unitSelectorLeft.val(selectedUnitLeft);
-  if (unitSelectorLeft.val() != selectedUnitRight)
+  if (unitSelectorLeft.val() !==selectedUnitRight)
     unitSelectorRight.val(selectedUnitRight);
   getConversion('left');
 }
@@ -415,7 +415,7 @@ function updateUnitSelectorsLeft(type) {
 const getConversion = async (change) => {
   const typeSelector = $('#type_selector').val();
 
-  if (typeSelector == '') {
+  if (typeSelector === '') {
     return;
   }
 
@@ -425,10 +425,10 @@ const getConversion = async (change) => {
   const leftVal = $('#left_input').val();
   const rightVal = $('#right_input').val();
 
-  if (unitSelectorRightVal == 'jpy') {
+  if (unitSelectorRightVal === 'jpy') {
     unitSelectorRightVal = 'yen';
   }
-  if (unitSelectorLeftVal == 'jpy') {
+  if (unitSelectorLeftVal === 'jpy') {
     unitSelectorLeftVal = 'yen';
   }
 
@@ -437,7 +437,7 @@ const getConversion = async (change) => {
     `${rightVal} ${unitSelectorRightVal}`
   );
   let result;
-  if (change == 'left') {
+  if (change === 'left') {
     result = await get_conversions(`${leftVal} ${unitSelectorLeftVal}`);
   } else {
     result = await get_conversions(`${rightVal} ${unitSelectorRightVal}`);
@@ -446,23 +446,23 @@ const getConversion = async (change) => {
   const elements = result.split(',').filter((element) => element.trim() !== '');
   console.log(elements, unitSelectorRightVal, unitSelectorLeftVal);
 
-  if (typeSelector == 'currency' || typeSelector == 'temperature') {
+  if (typeSelector === 'currency' || typeSelector === 'temperature') {
     unitSelectorRightVal = unit[unitSelectorRightVal];
     unitSelectorLeftVal = unit[unitSelectorLeftVal];
   }
   console.log(unitSelectorRightVal, unitSelectorLeftVal);
 
-  if (change == 'left') {
+  if (change === 'left') {
     $('#right_input').val(
       elements[
         elements.findIndex((ele) => ele.indexOf(unitSelectorRightVal) > -1)
-      ].split(' ')[typeSelector == 'currency' ? 1 : 0]
+      ].split(' ')[typeSelector === 'currency' ? 1 : 0]
     );
   } else {
     $('#left_input').val(
       elements[
         elements.findIndex((ele) => ele.indexOf(unitSelectorLeftVal) > -1)
-      ].split(' ')[typeSelector == 'currency' ? 1 : 0]
+      ].split(' ')[typeSelector === 'currency' ? 1 : 0]
     );
   }
 
