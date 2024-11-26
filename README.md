@@ -100,19 +100,6 @@ Once the user has installed our extension, all they have to do is click on the e
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Angle.PNG" height="300" style="vertical-align: top;"/>
 </p>
 
-## Style Checker and Analyzer
-
-### Standard Js
-
-Installation</b>
-`npm install standard --global` in comand line interface to install globally
-`npm install standard --save-dev` in command line interface to install locally
-
-Running Standard Js</b>
-go to root of project and type `standard` if StandardJs is installed globally
-go to root of project and type `npx standard` if StandardJs is installed locally
-Instead of installing it using npm, you can also use the extension available on VS Code
-
 ## IDE and Code Fomatter
 
 - IDE and Style Checker: [VSCode](https://code.visualstudio.com/)
