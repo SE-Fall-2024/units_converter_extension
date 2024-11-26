@@ -2,7 +2,7 @@
 ### Group 13: Nick Case, Hannah Estes, Satwika Kancharla
 
 - Github Repository ([found here](https://github.com/SE-Fall-2024/units_converter_extension))
-- Poster for Project ([found here](https://github.com/SE-Fall-2024/WolfJobs/blob/48184f3c086833c05fde40857ab7fe7c39f114d0/Project%202/CSC%20510%20Posters.pdf))
+- Poster for Project ([found here](https://github.com/SE-Fall-2024/units_converter_extension/blob/master/CSC%20510%20Posters%20(3).pdf))
 
 ### Repository Rubric
 | Notes                                                                                                                                                               | Contribution | Evidence                                                                                                                                                                                                                                                      |
