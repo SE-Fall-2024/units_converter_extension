@@ -36,7 +36,7 @@ $(function () {
     );
 
     console.log(type);
-    if (type !=='temperature' && type !=='currency') {
+    if (type !== 'temperature' && type !== 'currency') {
       customTypeSelector.append(
         $('<option>', {
           value: type,
@@ -351,7 +351,7 @@ const handleCheckboxChange = async (e) => {
       if ($(e).is(':checked')) {
         favouriteArr.push(val);
       } else {
-        favouriteArr = favouriteArr.filter((ele) => ele !==val);
+        favouriteArr = favouriteArr.filter((ele) => ele !== val);
       }
       console.log(favouriteArr);
       localStorage.setItem('favouriteArr', JSON.stringify(favouriteArr));
@@ -381,9 +381,9 @@ function updateUnitSelectorsRight(type) {
         })
       );
     });
-  if (unitSelectorRight.val() !==selectedUnitLeft)
+  if (unitSelectorRight.val() !== selectedUnitLeft)
     unitSelectorLeft.val(selectedUnitLeft);
-  if (unitSelectorLeft.val() !==selectedUnitRight)
+  if (unitSelectorLeft.val() !== selectedUnitRight)
     unitSelectorRight.val(selectedUnitRight);
   getConversion('left');
 }
@@ -405,9 +405,9 @@ function updateUnitSelectorsLeft(type) {
       })
     );
   });
-  if (unitSelectorRight.val() !==selectedUnitLeft)
+  if (unitSelectorRight.val() !== selectedUnitLeft)
     unitSelectorLeft.val(selectedUnitLeft);
-  if (unitSelectorLeft.val() !==selectedUnitRight)
+  if (unitSelectorLeft.val() !== selectedUnitRight)
     unitSelectorRight.val(selectedUnitRight);
   getConversion('left');
 }
