@@ -220,7 +220,7 @@ class Currency {
   }
 }
 
-if (typeof module == 'object') {
+if (typeof module === 'object') {
   module.exports = Currency;
 } else {
   window.Currency = Currency; // Make available globally in popup context

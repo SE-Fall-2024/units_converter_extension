@@ -41,7 +41,6 @@ async function get_conversions(selection) {
             .replace('−', '-');
           const precision = getPrecision(Number(quantity));
 
-
           // const dollar = ['dollars','dollar','USD','$','Can$','C$','CA$','CAD','AU$','A$','AUD'];
           // const yen_yuan = ['CNY', 'Chinese Yuan', 'Yuan', '¥', 'Yen', 'JPY'];
           // if (unitObject.type === 'currency' && (yen_yuan.includes(unitObject.unit) || dollar.includes(unitObject.unit))) {
@@ -62,28 +61,28 @@ async function get_conversions(selection) {
           //       console.log('User cancelled the selection.');
           //     }
           //   }
-            // if (dollar.includes(unitObject.unit)) {
-            //   const promptMessage = 'Multiple matches found. Please choose one:';
-            //   const options = ['USD', 'CAD', 'AUD'];
-            //   const userChoice = await customPrompt(promptMessage, options);
-            //   if (userChoice !== null) {
-            //     unitObject.unit = options[userChoice];
-            //     console.log('User choice:', options[userChoice]);
-            //   } else {
-            //     console.log('User cancelled the selection.');
-            //   }
-            // } 
-            // if (yen_yuan.includes(unitObject.unit)) {
-            //   const promptMessage = 'Multiple matches found. Please choose one:';
-            //   const options = ['JPY', 'CNY'];
-            //   const userChoice = await customPrompt(promptMessage, options);
-            //   if (userChoice !== null) {
-            //     unitObject.unit = options[userChoice];
-            //     console.log('User choice:', options[userChoice]);
-            //   } else {
-            //     console.log('User cancelled the selection.');
-            //   }
-            // }
+          // if (dollar.includes(unitObject.unit)) {
+          //   const promptMessage = 'Multiple matches found. Please choose one:';
+          //   const options = ['USD', 'CAD', 'AUD'];
+          //   const userChoice = await customPrompt(promptMessage, options);
+          //   if (userChoice !== null) {
+          //     unitObject.unit = options[userChoice];
+          //     console.log('User choice:', options[userChoice]);
+          //   } else {
+          //     console.log('User cancelled the selection.');
+          //   }
+          // }
+          // if (yen_yuan.includes(unitObject.unit)) {
+          //   const promptMessage = 'Multiple matches found. Please choose one:';
+          //   const options = ['JPY', 'CNY'];
+          //   const userChoice = await customPrompt(promptMessage, options);
+          //   if (userChoice !== null) {
+          //     unitObject.unit = options[userChoice];
+          //     console.log('User choice:', options[userChoice]);
+          //   } else {
+          //     console.log('User cancelled the selection.');
+          //   }
+          // }
           // }
 
           const conversion_class = get_conversion_class(
@@ -92,21 +91,49 @@ async function get_conversions(selection) {
           );
 
           if (unitObject.type == 'currency') {
-            const dollar = ['dollars','dollar','USD','$','Can$','C$','CA$','CAD','AU$','A$','AUD'];
+            const dollar = [
+              'dollars',
+              'dollar',
+              'USD',
+              '$',
+              'Can$',
+              'C$',
+              'CA$',
+              'CAD',
+              'AU$',
+              'A$',
+              'AUD',
+            ];
             const yen_yuan = ['JPY', 'CNY', 'Chinese Yuan', 'Yuan', '¥', 'Yen'];
 
-            console.log("qwertyuiopasdfghjk",yen_yuan.includes(unitObject.unit), unitObject.unit)
-            console.log("qwertyuiopasdfghjk",dollar.includes(unitObject.unit), unitObject.unit)
-            if (yen_yuan.includes(unitObject.unit) || dollar.includes(unitObject.unit)) {
-              console.log("qwertyuiopasdfghjk", yen_yuan.includes(unitObject.unit), unitObject.unit)
+            console.log(
+              'qwertyuiopasdfghjk',
+              yen_yuan.includes(unitObject.unit),
+              unitObject.unit
+            );
+            console.log(
+              'qwertyuiopasdfghjk',
+              dollar.includes(unitObject.unit),
+              unitObject.unit
+            );
+            if (
+              yen_yuan.includes(unitObject.unit) ||
+              dollar.includes(unitObject.unit)
+            ) {
+              console.log(
+                'qwertyuiopasdfghjk',
+                yen_yuan.includes(unitObject.unit),
+                unitObject.unit
+              );
               var options = [];
               if (dollar.includes(unitObject.unit))
                 options = ['USD', 'CAD', 'AUD'];
               else if (yen_yuan.includes(unitObject.unit))
                 options = ['CNY', 'JPY'];
-  
+
               if (options !== null) {
-                const promptMessage = 'Multiple matches found. Please choose one:';
+                const promptMessage =
+                  'Multiple matches found. Please choose one:';
                 const userChoice = await customPrompt(promptMessage, options);
                 if (userChoice !== null) {
                   unitObject.unit = options[userChoice];

@@ -82,7 +82,7 @@ $(function () {
     const selectedCurrency = $(this).val();
     console.log(selectedCurrency);
 
-    const graphUrl = `./js/poop.png`; // Change this to the actual URL for your graphs
+    const graphUrl = './js/poop.png'; // Change this to the actual URL for your graphs
     $('#currency_graph').attr('src', graphUrl).show();
 
     // const xValues = [50,60,70,80,90,100,110,120,130,140,150];
