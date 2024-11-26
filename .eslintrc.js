@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['*.min.js'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -14,7 +15,6 @@ module.exports = {
       rules: {
         semi: 'error',
         'prefer-const': 'error',
-        'no-console': 'error',
         eqeqeq: 'error',
         quotes: ['error', 'single'],
       },
