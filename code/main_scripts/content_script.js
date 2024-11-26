@@ -83,8 +83,8 @@ document.addEventListener(
 // Display the modal at the cursor location and make it visible
 function showModal(mouseX, mouseY, html) {
   unitModal.innerHTML = html;
-  unitModal.style.top = document.documentElement.scrollTop + mouseY + 'px';
-  unitModal.style.left = mouseX + 'px';
+  // unitModal.style.top = document.documentElement.scrollTop + mouseY + 'px';
+  // unitModal.style.left = mouseX + 'px';
   unitModal.style.visibility = 'visible';
 }
 
@@ -94,6 +94,6 @@ document.addEventListener('click', function (event) {
     modalContents.forEach((element) => {
       element.classList.remove('uc_mc_h');
     });
-    viewAllButton.style.display = 'none';
+    event.target.style.display = 'none';
   }
 });
