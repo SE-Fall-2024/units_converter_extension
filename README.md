@@ -92,14 +92,6 @@ Once the user has installed our extension, all they have to do is click on the e
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/dark-theme.png" height="300" style="vertical-align: top;"/>
 </p>
 
-### 6. Convert Scientific Units
-- Units can be converted with more scientific units such as Energy, Frequency, and Angles.
-<p align="center">
-  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Energy.png" height="300" style="vertical-align: top;"/>
-  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Frequency.PNG" height="300" style="vertical-align: top;"/>
-  <img src="https://github.com/ncsuswe24/units_converter_extension/blob/dev/assets/Images/Angle.PNG" height="300" style="vertical-align: top;"/>
-</p>
-
 ## IDE and Code Fomatter
 
 - IDE and Style Checker: [VSCode](https://code.visualstudio.com/)
