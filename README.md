@@ -85,7 +85,7 @@ Once the user has installed our extension, all they have to do is click on the e
 
 
 ### 5. Switch Themes
-- The unit converter has a light and dark theme, which can be switched between using the simple toggle switch !
+- The unit converter has a light and dark theme, which can be switched between using the simple toggle switch!
 
 <p align="center">
   <img src="https://github.com/ncsuswe24/units_converter_extension/blob/f9d6634df01b34b22038c958b95e2a6a9caf162f/assets/Images/light-theme.png" height="300" style="vertical-align: top;"/>
