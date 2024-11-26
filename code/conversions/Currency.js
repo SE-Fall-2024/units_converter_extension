@@ -2,7 +2,7 @@
 /**
  * Currency class handles currency conversions
  */
- 
+
 class Currency {
   /**
    * @constructor
@@ -12,7 +12,6 @@ class Currency {
   constructor(unit, arr) {
     this.unit = unit;
     this.arr = arr;
-    
   }
 
   /**
@@ -111,17 +110,17 @@ class Currency {
         return null;
     }
   }
- /**
- * Fetches a historical currency conversion rate for a specified date, base currency, target currency, and amount.
- * Utilizes exchangerate.host API to retrieve historical conversion data.
- * 
- * @async
- * @param {string} baseCurrency - The currency code to convert from (e.g., "USD").
- * @param {string} targetCurrency - The currency code to convert to (e.g., "EUR").
- * @param {string} date - The date for historical conversion in 'YYYY-MM-DD' format.
- * @param {number} [amount=1] - The amount to be converted. Defaults to 1.
- * @returns {Promise<number|null>} - A promise that resolves to the converted amount, or null if the API call fails.
- */
+  /**
+   * Fetches a historical currency conversion rate for a specified date, base currency, target currency, and amount.
+   * Utilizes exchangerate.host API to retrieve historical conversion data.
+   *
+   * @async
+   * @param {string} baseCurrency - The currency code to convert from (e.g., "USD").
+   * @param {string} targetCurrency - The currency code to convert to (e.g., "EUR").
+   * @param {string} date - The date for historical conversion in 'YYYY-MM-DD' format.
+   * @param {number} [amount=1] - The amount to be converted. Defaults to 1.
+   * @returns {Promise<number|null>} - A promise that resolves to the converted amount, or null if the API call fails.
+   */
   async getHistoricalData(baseCurrency, targetCurrency, date, amount = 1) {
     // Validate date format YYYY-MM-DD // New implemented
     const GLOBAL = typeof window !== 'undefined' ? window : global;
@@ -131,30 +130,27 @@ class Currency {
 
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!dateRegex.test(date)) {
-        console.warn("Invalid date format");
-        return null;
+      console.warn('Invalid date format');
+      return null;
     }
 
     const url = `https://api.exchangerate.host/convert?access_key=${apiKey}&from=${baseCurrency}&to=${targetCurrency}&amount=${amount}&date=${date}`;
     try {
-        const response = await fetch(url);
-        const data = await response.json();
-        if (data.success) {
-            return data.result;
-        } else {
-            console.warn(`Failed to fetch historical data: ${data.error || 'Unknown error'}`);
-            return null;
-        }
-    } catch (error) {
-        console.error("Error fetching historical data:", error);
+      const response = await fetch(url);
+      const data = await response.json();
+      if (data.success) {
+        return data.result;
+      } else {
+        console.warn(
+          `Failed to fetch historical data: ${data.error || 'Unknown error'}`
+        );
         return null;
+      }
+    } catch (error) {
+      console.error('Error fetching historical data:', error);
+      return null;
     }
-}
-
-
-
-
-
+  }
 
   /**
    * From our standard conversion we try to convert into all the other units specified in arr property of this class with a precision no more than 10
@@ -169,7 +165,7 @@ class Currency {
     for (let i = 0; i < this.arr.length; i++) {
       switch (this.arr[i].toLowerCase()) {
         case 'usd':
-          res += ',$ ' + this.getPreciseNumber(quantity, precision);
+          res += ',USD$ ' + this.getPreciseNumber(quantity, precision);
           break;
         case 'eur':
           factor = await this.getData('USD').then(function (d) {
@@ -193,7 +189,7 @@ class Currency {
           factor = await this.getData('USD').then(function (d) {
             return d['JPY'];
           });
-          res += ',¥ ' + this.getPreciseNumber(factor * quantity, precision);
+          res += ',JPN¥ ' + this.getPreciseNumber(factor * quantity, precision);
           break;
         case 'cad':
           factor = await this.getData('USD').then(function (d) {
@@ -217,17 +213,15 @@ class Currency {
           factor = await this.getData('USD').then(function (d) {
             return d['CNY'];
           });
-          res += ',¥ ' + this.getPreciseNumber(factor * quantity, precision);
+          res += ',CNY¥ ' + this.getPreciseNumber(factor * quantity, precision);
       }
     }
     return res;
   }
 }
 
-if (typeof module == 'object') {
+if (typeof module === 'object') {
   module.exports = Currency;
 } else {
   window.Currency = Currency; // Make available globally in popup context
 }
-
-

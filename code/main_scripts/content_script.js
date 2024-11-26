@@ -20,6 +20,7 @@ document.addEventListener(
       (async () => {
         console.log(selection);
         const result = await get_conversions(selection);
+        console.log(result);
         if (result.length > 0) {
           const elements = result
             .split(',')
@@ -41,6 +42,7 @@ document.addEventListener(
 
                 console.log(conditionMet);
 
+                //console.log(elements);
                 modalContent = `<p class="modal_heading">${selection}</p>`;
                 elements.forEach((element, index) => {
                   console.log(element.split(' '), r);
@@ -81,8 +83,8 @@ document.addEventListener(
 // Display the modal at the cursor location and make it visible
 function showModal(mouseX, mouseY, html) {
   unitModal.innerHTML = html;
-  unitModal.style.top = document.documentElement.scrollTop + mouseY + 'px';
-  unitModal.style.left = mouseX + 'px';
+  // unitModal.style.top = document.documentElement.scrollTop + mouseY + 'px';
+  // unitModal.style.left = mouseX + 'px';
   unitModal.style.visibility = 'visible';
 }
 
@@ -92,6 +94,6 @@ document.addEventListener('click', function (event) {
     modalContents.forEach((element) => {
       element.classList.remove('uc_mc_h');
     });
-    viewAllButton.style.display = 'none';
+    event.target.style.display = 'none';
   }
 });

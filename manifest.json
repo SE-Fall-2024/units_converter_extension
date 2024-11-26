@@ -1,7 +1,15 @@
 {
 	"manifest_version": 3,
 	"name": "Unit Convert Selection",
-	"version": "1.0.0",
+	"version": "1.1.0",
+	"browser_specific_settings": {
+  "gecko": {
+    "id": "your-extension-id@example.com"
+  }
+},
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline';"
+  },
 	"description": "Do unit conversion conveniently at the current selected text",
 	"action": {
 		"default_icon": {
@@ -16,12 +24,13 @@
 	},
 	"host_permissions": ["<all_urls>"],
 	"permissions": ["storage"],
-	"minimum_chrome_version": "14",
+	"minimum_chrome_version": "88",
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
 			"js": [
 				"Config.js",
+				"code/prompt/customPrompt.js",
 				"code/main_scripts/content_script.js",
 				"code/main_scripts/parser_script.js",
 				"code/main_scripts/units_objects.js",
