@@ -46,43 +46,7 @@ timezones = [
     zone: 'UTC',
     tz_string: 'UTC',
     offset: 'UTC-0000',
-    aliases: ['Coordinated Universal Time', 'UTC', 'Greenwich Mean Time'],
-  },
-  {
-    zone: 'CET',
-    tz_string: 'Europe/Paris',
-    offset: 'UTC+0100',
-    aliases: ['Central European Time', 'CET'],
-  },
-  {
-    zone: 'ACST',
-    tz_string: 'Australia/Sydney',
-    offset: 'UTC+0930',
-    aliases: ['Australian Central Standard Time', 'ACST'],
-  },
-  {
-    zone: 'HST',
-    tz_string: 'Pacific/Honolulu',
-    offset: 'UTC+1000',
-    aliases: ['Hawaii Standard Time', 'HST'],
-  },
-  {
-    zone: 'JST',
-    tz_string: 'Asia/Tokyo',
-    offset: 'UTC+0900',
-    aliases: ['Japan Standard Time', 'JST'],
-  },
-  {
-    zone: 'SGT',
-    tz_string: 'Asia/Singapore',
-    offset: 'UTC+0800',
-    aliases: ['Singapore Time', 'SGT'],
-  },
-  {
-    zone: 'WAT',
-    tz_string: 'Africa/Lagos',
-    offset: 'UTC+0100',
-    aliases: ['West Africa Time', 'WAT'],
+    aliases: ['Coordinated Universal Time', 'UTC'],
   },
 ];
 
