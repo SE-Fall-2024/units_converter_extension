@@ -12,7 +12,7 @@ An extension that converts your selected values into popular units. Save time, m
 [![Coverage Status](https://coveralls.io/repos/github/SE-Fall-2024/units_converter_extension/badge.svg?branch=master)](https://coveralls.io/github/SE-Fall-2024/units_converter_extension?branch=master)
 [![Code Style: ESLint](https://img.shields.io/badge/ESLint-purple.svg)](https://eslint.org/)
 [![Code Formatting: Prettier](https://img.shields.io/badge/Prettier-yellow.svg)](https://prettier.io/)  
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14224806.svg)](https://doi.org/10.5281/zenodo.14224806)
 
 **Video demo below:**
 
